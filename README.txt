@@ -1,7 +1,7 @@
 === Flexia Core ===
 Contributors: re_enter_rupok, codetic
 Donate link: https://www.codetic.net
-Tags: comments, spam
+Tags: flexia, metabox, customizer, widgets
 Requires at least: 4.0
 Tested up to: 4.9.1
 Stable tag: 1.0.0
@@ -21,9 +21,9 @@ Core plugin for Flexia theme. Controls all the plugin territory functionalities.
 
 == Frequently Asked Questions ==
 
-= Does it work standalone =
+= Does it work standalone? =
 
-Though it's a specialized plugin for flexia, it will work standalone as well.
+It's a specialized plugin for Flexia theme, you need to install Flexia.
 
 
 == Screenshots ==
