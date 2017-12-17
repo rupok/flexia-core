@@ -12,8 +12,11 @@
  */
 class Flexia_Core_Admin_Pages {
 
+	public $fc;
+
 	public function __construct() {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'class-flexia-core-plugin-installer.php';
+		$this->fc = new Flexia_Core_Plugin_Installer();
 	}
 
 	/**
@@ -27,7 +30,7 @@ class Flexia_Core_Admin_Pages {
 			'Flexia',
 			'Flexia',
 			'manage_options',
-			'flexia-core-settings',
+			'flexia-settings',
 			array( $this, 'flexia_core_admin_home_page' ),
 			'',
 			199
@@ -84,11 +87,11 @@ class Flexia_Core_Admin_Pages {
 	public function create_flexia_core_rec_plugins_page() {
 
 		add_submenu_page(
-			'flexia-core-settings',
+			'flexia-settings',
 			'Rec. Plugins',
 			'Rec. Plugins',
 			'manage_options',
-			'flexia-core-recommended-plugins',
+			'flexia-recommended-plugins',
 			array( $this, 'flexia_core_rec_plugins_page' )
 		);
 
@@ -101,24 +104,7 @@ class Flexia_Core_Admin_Pages {
 	 */
 	public function flexia_core_rec_plugins_page() {
 
-		$free_plugins = array(
-			array(
-				'slug' 	=> 'elementor',
-				'file'	=> 'elementor.php',
-			),
-			array(
-				'slug' 	=> 'woocommerce',
-				'file'	=> 'woocommerce.php',
-			),
-			array(
-				'slug' 	=> 'contact-form-7',
-				'file'	=> 'wp-contact-form-7.php',
-			),
-			array(
-				'slug' 	=> 'ninja-forms',
-				'file'	=> 'ninja-forms.php',
-			),
-		);
+
 		?>
 		<div class="flexia-core-admin-wrapper">
 			<div class="flexia-core-admin-header">
@@ -127,7 +113,7 @@ class Flexia_Core_Admin_Pages {
 			<!-- Free Plugins -->
 			<?php
 			if( class_exists( 'Flexia_Core_Plugin_Installer' ) ) {
-				echo Flexia_Core_Plugin_Installer::free_plugins_installer( $free_plugins );
+				echo $this->fc->free_plugins();
 			}
 			?>
 			<!-- Premium Plugins -->
