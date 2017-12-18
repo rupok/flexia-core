@@ -14,9 +14,20 @@
 .flexia-core-admin-wrapper .flexia-core-admin-header {
 	width: 100%;
 	margin-bottom: 15px;
-	padding: 20px 20px;
+	padding: 10px 15px;
 	background: #fff;
 	border: 1px solid rgba( 0,0,0,0.1 );
+	display: flex;
+	align-content: center;
+	align-items: center;
+}
+.flexia-logo-inline {
+	width: 36px;
+	padding-right: 10px;
+}
+.flexia-core-admin-wrapper .flexia-core-admin-header p {
+	border-left: 1px solid rgba(0,0,0, .5);
+	padding-left: 10px;
 }
 .flexia-core-admin-wrapper .flexia-core-admin-header .title {
 	font-size: 24px;
@@ -24,6 +35,8 @@
 	line-height: 1;
 	margin: 0px;
 	color: #444;
+	flex: 0 0 265px;
+	padding-right: 10px;
 }
 .flexia-core-sidebar-widget .title {
 	font-size: 17px;
