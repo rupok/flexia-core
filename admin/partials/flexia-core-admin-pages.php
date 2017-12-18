@@ -110,97 +110,14 @@ class Flexia_Core_Admin_Pages {
 			<div class="flexia-core-admin-header">
 				<h2 class="title">Recommended Plugins</h2>
 			</div>
-			<!-- Free Plugins -->
-			<?php
-			if( class_exists( 'Flexia_Core_Plugin_Installer' ) ) {
-				echo $this->fc->free_plugins();
-			}
-			?>
-			<!-- Premium Plugins -->
-			<!-- <div class="flexia-plugins">
-				<div class="header">
-					<img src="<?php echo plugins_url( '../img/placeholder.png', __FILE__ ) ?>" alt="">
-				</div>
-				<div class="content">
-					<h4 class="title">Elementor Page Builder</h4>
-					<p>The most advanced frontend drag &amp; drop page builder. Create high-end, pixel perfect websites at record speeds. Any theme, any page, any design.</p>
-					<span class="by-author">By: <a href="#">Elementor</a></span>
-				</div>
-				<div class="footer">
-					<div class="footer-left">
-						<ul>
-							<li><button type="submit" class="button button-secondary">Install Now</button></li>
-							<li><a href="#">More Details</a></li>
-						</ul>
-					</div>
-					<div class="footer-right">
-						<span class="tag-pro">Premium</span>
-					</div>
-				</div>
+			<div class="flexia-plugins-wrapper">
+				<?php
+					if( class_exists( 'Flexia_Core_Plugin_Installer' ) ) {
+						echo $this->fc->free_plugins();
+						echo $this->fc->premium_plugins();
+					}
+				?>
 			</div>
-			<div class="flexia-plugins">
-				<div class="header">
-					<img src="<?php echo plugins_url( '../img/placeholder.png', __FILE__ ) ?>" alt="">
-				</div>
-				<div class="content">
-					<h4 class="title">Contact Form 7</h4>
-					<p>The most advanced frontend drag &amp; drop page builder. Create high-end, pixel perfect websites at record speeds. Any theme, any page, any design.</p>
-					<span class="by-author">By: <a href="#">Contact Form 7</a></span>
-				</div>
-				<div class="footer">
-					<div class="footer-left">
-						<ul>
-							<li><button type="submit" class="button button-secondary">Install Now</button></li>
-							<li><a href="#">More Details</a></li>
-						</ul>
-					</div>
-					<div class="footer-right">
-						<span class="tag-pro">Premium</span>
-					</div>
-				</div>
-			</div>
-			<div class="flexia-plugins">
-				<div class="header">
-					<img src="<?php echo plugins_url( '../img/placeholder.png', __FILE__ ) ?>" alt="">
-				</div>
-				<div class="content">
-					<h4 class="title">Yoast SEO</h4>
-					<p>The most advanced frontend drag &amp; drop page builder. Create high-end, pixel perfect websites at record speeds. Any theme, any page, any design.</p>
-					<span class="by-author">By: <a href="#">Yoast SEO</a></span>
-				</div>
-				<div class="footer">
-					<div class="footer-left">
-						<ul>
-							<li><button type="submit" class="button button-secondary">Install Now</button></li>
-							<li><a href="#">More Details</a></li>
-						</ul>
-					</div>
-					<div class="footer-right">
-						<span class="tag-pro">Premium</span>
-					</div>
-				</div>
-			</div>
-			<div class="flexia-plugins">
-				<div class="header">
-					<img src="<?php echo plugins_url( '../img/placeholder.png', __FILE__ ) ?>" alt="">
-				</div>
-				<div class="content">
-					<h4 class="title">Essential Addons Elementor</h4>
-					<p>The most advanced frontend drag &amp; drop page builder. Create high-end, pixel perfect websites at record speeds. Any theme, any page, any design.</p>
-					<span class="by-author">By: <a href="#">Codetic</a></span>
-				</div>
-				<div class="footer">
-					<div class="footer-left">
-						<ul>
-							<li><button type="submit" class="button button-secondary">Install Now</button></li>
-							<li><a href="#">More Details</a></li>
-						</ul>
-					</div>
-					<div class="footer-right">
-						<span class="tag-pro">Premium</span>
-					</div>
-				</div>
-			</div> -->
 			<div class="flexia-core-admin-footer">
 				<p>Flexia admin footer area.</p>
 			</div>

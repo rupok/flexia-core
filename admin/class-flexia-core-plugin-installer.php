@@ -265,5 +265,87 @@ class Flexia_Core_Plugin_Installer {
     	<?php
     }
 
+    /**
+     * Generates all premium plugins
+	 *
+	 * @since   1.0.0
+     */
+    public function premium_plugins() {
+    	$this->pro_plugins = array(
+    		array(
+				'name' 	=> 'Elementor Pro',
+				'url'	=> 'https://elementor.com',
+				'desc'	=> 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque vitae consequatur, cupiditate inventore impedit sint velit corrupti.',
+				'author' => 'Elementor',
+				'author_url' => 'https://elementor.net',
+				'banner' =>  plugins_url( 'img/placeholder.png', __FILE__ ),
+				'doc_url' => '',
+			),
+			array(
+				'name' 	=> 'Essential Addons Elementor',
+				'url'	=> 'https://essentail-addons.com/elementor',
+				'desc'	=> 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque vitae consequatur, cupiditate inventore impedit sint velit corrupti.',
+				'author' => 'WP-Developer',
+				'author_url' => 'https://wpdeveloper.net',
+				'banner' =>  plugins_url( 'img/placeholder.png', __FILE__ ),
+				'doc_url' => '',
+			),
+			array(
+				'name' 	=> 'Essential Addons Elementor',
+				'url'	=> 'https://essentail-addons.com/elementor',
+				'desc'	=> 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque vitae consequatur, cupiditate inventore impedit sint velit corrupti.',
+				'author' => 'WP-Developer',
+				'author_url' => 'https://wpdeveloper.net',
+				'banner' =>  plugins_url( 'img/placeholder.png', __FILE__ ),
+				'doc_url' => '',
+			),
+		);
+
+    	foreach( $this->pro_plugins as $plugin ) {
+	    	self::render_premium_template(
+	    		$plugin['name'],
+	    		$plugin['url'],
+	    		$plugin['desc'],
+	    		$plugin['author'],
+	    		$plugin['author_url'],
+	    		$plugin['banner'],
+	    		$plugin['doc_url']
+	    	);
+    	}
+    }
+
+    /**
+     * This method will render premium plugin block
+	 *
+	 * @since   1.0.0
+     */
+    public static function render_premium_template( $name, $url, $desc, $author, $author_url, $banner, $doc_url ) {
+    	?>
+		<div class="flexia-plugins">
+		    <div class="header">
+		        <img src="<?php echo esc_url( $banner ); ?>" alt="<?php echo esc_attr( $name ); ?>">
+		    </div>
+		    <div class="content">
+		        <h4 class="title"><?php _e( $name, 'felxia-core' ); ?></h4>
+		        <p><?php echo esc_html( $desc, 'flexia-core' ); ?></p>
+		        <span class="by-author"><?php _e( 'By:', 'flexia-core' ); ?> <a href="<?php echo esc_url( $author_url ); ?>"><?php echo esc_html( $author, 'flexia-core' ); ?></a></span>
+		    </div>
+		    <div class="footer">
+		        <div class="footer-left">
+		            <ul>
+		                <li>
+		                    <a href="<?php echo esc_url( $url ); ?>" class="button button-secondary"><?php _e( 'Get Now', 'flexia-core' ); ?></a>
+		                </li>
+		                <li><a href="<?php echo esc_url( $doc_url ); ?>" target="_blank"><?php _e( 'More Details', 'flexia-core' ); ?></a></li>
+		            </ul>
+		        </div>
+		        <div class="footer-right">
+		            <span class="tag-pro"><?php  _e( 'Premium', 'flexia-core' ) ?></span>
+		        </div>
+		    </div>
+		</div>
+    	<?php
+    }
+
 }
 endif;

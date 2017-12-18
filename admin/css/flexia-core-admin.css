@@ -10,6 +10,7 @@
 	flex-wrap: wrap;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	flex-direction: row;
 	width: 99%;
 }
 .flexia-core-admin-wrapper .flexia-core-admin-header {
@@ -46,12 +47,22 @@
 	background: #fff;
 	border: 1px solid rgba( 0,0,0,0.1 );
 }
+.flexia-plugins-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+}
 .flexia-plugins {
-	width: 23%;
-	float: left;
+	max-width: calc( 25% - 10px );
+	min-width: 260px;
+	flex: 1 1 auto;
 	background: #fff;
 	border: 1px solid rgba( 0,0,0,0.1 );
+	margin-right: 10px;
 	margin-bottom: 25px;
+}
+.flexia-plugins:last-child,
+.flexia-plugins:nth-child(4n) {
+	margin-right: 0px;
 }
 .flexia-plugins .header {
 	width: 100%;
@@ -103,6 +114,9 @@
 .flexia-plugins .footer .footer-left ul li:last-child {
 	padding-left: 10px;
 }
+.flexia-plugins .footer .footer-left ul li:first-child {
+	padding-left: 0px;
+}
 .flexia-plugins .footer .footer-left ul li a {
 	line-height: 25px;
 	text-decoration: none;
@@ -130,4 +144,27 @@
 	text-align: center;
 	color: #fff;
 	font-weight: 600;
+}
+
+/* Media Quires */
+@media only screen and (max-width: 480px) {
+	.flexia-plugins-wrapper {
+		flex-flow: column wrap;
+	}
+	.flexia-plugins {
+		max-width: 100%;
+		margin-right: 0px;
+	}
+}
+@media only screen
+	and (min-device-width: 768px)
+  	and (max-device-width: 1024px) {
+
+	.flexia-plugins {
+		max-width: calc( 50% - 20px );
+		margin-right: 20px;
+	}
+	.flexia-plugins:nth-child(2n) {
+		margin-right: 0px;
+	}
 }
