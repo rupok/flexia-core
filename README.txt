@@ -1,7 +1,6 @@
 === Flexia Core ===
 
 Contributors: re_enter_rupok, codetic
-Donate link: https://www.codetic.net
 Tags: flexia, metabox, customizer, widgets
 Requires at least: 4.0
 Tested up to: 4.9.1
