@@ -279,7 +279,7 @@ class Flexia_Core_Plugin_Installer {
 				'author' => 'Codetic',
 				'author_url' => 'https://essential-addons.com',
 				'banner' =>  plugins_url( 'img/eael-pro-banner.png', __FILE__ ),
-				'doc_url' => '',
+				'doc_url' => 'https://essential-addons.com/elementor',
 			),
 		);
 
