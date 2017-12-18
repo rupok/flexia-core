@@ -1,4 +1,5 @@
 === Flexia Core ===
+
 Contributors: re_enter_rupok, codetic
 Donate link: https://www.codetic.net
 Tags: flexia, metabox, customizer, widgets
@@ -8,11 +9,11 @@ Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Core plugin for Flexia theme. Controls all the plugin territory functionalities. 
+Core plugin for [Flexia](https://wordpress.org/themes/flexia/) theme. Controls all the plugin territory functionalities for Flexia. 
 
 == Description ==
 
-Core plugin for Flexia theme. Controls all the plugin territory functionalities. 
+Core plugin for [Flexia theme](https://wordpress.org/themes/flexia/) theme. Controls all the plugin territory functionalities for Flexia. 
 
 == Installation ==
 

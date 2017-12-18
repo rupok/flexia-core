@@ -56,16 +56,16 @@ class Flexia_Core_Plugin_Installer {
 				'file'	=> 'elementor.php',
 			),
 			array(
+				'slug' 	=> 'essential-addons-for-elementor-lite',
+				'file'	=> 'essential-addons-for-elementor.php',
+			),
+			array(
 				'slug' 	=> 'woocommerce',
 				'file'	=> 'woocommerce.php',
 			),
 			array(
-				'slug' 	=> 'contact-form-7',
-				'file'	=> 'wp-contact-form-7.php',
-			),
-			array(
-				'slug' 	=> 'ninja-forms',
-				'file'	=> 'ninja-forms.php',
+				'slug' 	=> 'wordpress-seo',
+				'file'	=> 'wp-seo-main.php',
 			),
 		);
 
@@ -273,30 +273,12 @@ class Flexia_Core_Plugin_Installer {
     public function premium_plugins() {
     	$this->pro_plugins = array(
     		array(
-				'name' 	=> 'Elementor Pro',
-				'url'	=> 'https://elementor.com',
-				'desc'	=> 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque vitae consequatur, cupiditate inventore impedit sint velit corrupti.',
-				'author' => 'Elementor',
-				'author_url' => 'https://elementor.net',
-				'banner' =>  plugins_url( 'img/placeholder.png', __FILE__ ),
-				'doc_url' => '',
-			),
-			array(
-				'name' 	=> 'Essential Addons Elementor',
-				'url'	=> 'https://essentail-addons.com/elementor',
-				'desc'	=> 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque vitae consequatur, cupiditate inventore impedit sint velit corrupti.',
-				'author' => 'WP-Developer',
-				'author_url' => 'https://wpdeveloper.net',
-				'banner' =>  plugins_url( 'img/placeholder.png', __FILE__ ),
-				'doc_url' => '',
-			),
-			array(
-				'name' 	=> 'Essential Addons Elementor',
-				'url'	=> 'https://essentail-addons.com/elementor',
-				'desc'	=> 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque vitae consequatur, cupiditate inventore impedit sint velit corrupti.',
-				'author' => 'WP-Developer',
-				'author_url' => 'https://wpdeveloper.net',
-				'banner' =>  plugins_url( 'img/placeholder.png', __FILE__ ),
+				'name' 	=> 'Essential Addons for Elementor - Pro',
+				'url'	=> 'https://wpdeveloper.net/flexia-essential-addons-elementor',
+				'desc'	=> 'Ultimate elements  library for Elementor WordPress Page Builder. 30+ stunning elements for Elementor.',
+				'author' => 'Codetic',
+				'author_url' => 'https://essential-addons.com',
+				'banner' =>  plugins_url( 'img/eael-pro-banner.png', __FILE__ ),
 				'doc_url' => '',
 			),
 		);

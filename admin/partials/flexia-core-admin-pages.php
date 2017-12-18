@@ -48,30 +48,28 @@ class Flexia_Core_Admin_Pages {
 		?>
 		<div class="flexia-core-admin-wrapper">
 			<div class="flexia-core-admin-header">
-				<h2 class="title">Flexia Core Admin Panel</h2>
+				<h2 class="title">Flexia Settings</h2>
 			</div>
 			<div class="flexia-core-content">
 				<div class="flexia-core-admin-widget">
-					<h2 class="title">Flexia Pro</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla optio illo, reprehenderit officia iste quaerat voluptatem numquam a similique. Amet explicabo, veniam fugit. Dolorem commodi accusantium ipsa omnis, laudantium at.</p>
-				</div>
-				<div class="flexia-core-admin-widget">
-					<h2 class="title">Flexia Pro</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla optio illo, reprehenderit officia iste quaerat voluptatem numquam a similique. Amet explicabo, veniam fugit. Dolorem commodi accusantium ipsa omnis, laudantium at.</p>
+					<?php echo '<img class="flexia-preview-img" src="' . plugins_url( 'img/flexia-preview.png', dirname(__FILE__) ) . '" > '; ?>
 				</div>
 			</div>
 			<div class="flexia-core-sidebar">
 				<div class="flexia-core-sidebar-widget">
-					<h4 class="title">Sidebar Title</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam illo praesentium sequi in cum, beatae maiores quae qui temporibus sint quos atque incidunt doloribus soluta minus molestias quo fuga facilis?</p>
+					<h4 class="title">Show your love</h4>
+					<p>We love to have you in Flexia family. We are making it more awesome everyday. Take your 2 minutes to review the theme and spread the love to encourage us to keep it going.</p>
+
+					<a href="https://wordpress.org/support/theme/flexia/reviews/#new-post" class="review-flexia button button-primary" target="_blank">Leave a Review</a>
 				</div>
 				<div class="flexia-core-sidebar-widget">
-					<h4 class="title">Sidebar Title</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam illo praesentium sequi in cum, beatae maiores quae qui temporibus sint quos atque incidunt doloribus soluta minus molestias quo fuga facilis?</p>
+					<h4 class="title">Contribute to Flexia</h4>
+					<p>Flexia is a free theme and always will be. You can contribute to make it better creating issues, pull requests at <a href="https://github.com/rupok/flexia" target="_blank">Github.</a></p>
 				</div>
-			</div>
-			<div class="flexia-core-admin-footer">
-				<p>Flexia admin footer area.</p>
+				<div class="flexia-core-sidebar-widget">
+					<h4 class="title">Need help?</h4>
+					<p>We are crafting the documentation and creating support forum. Meantime, if you need help, feel free to get in touch via live chat support at <a href="https://wpdeveloper.net" target="_blank">WPDeveloper.net.</a></p>
+				</div>
 			</div>
 		</div>
 		<?php
@@ -109,6 +107,7 @@ class Flexia_Core_Admin_Pages {
 		<div class="flexia-core-admin-wrapper">
 			<div class="flexia-core-admin-header">
 				<h2 class="title">Recommended Plugins</h2>
+				<p>If you want extra functionality, you can add the below plugins. None of these plugins are required for the theme to work, they simply add additional functionality.</p>
 			</div>
 			<div class="flexia-plugins-wrapper">
 				<?php
@@ -117,9 +116,6 @@ class Flexia_Core_Admin_Pages {
 						echo $this->fc->premium_plugins();
 					}
 				?>
-			</div>
-			<div class="flexia-core-admin-footer">
-				<p>Flexia admin footer area.</p>
 			</div>
 		</div>
 		<?php
