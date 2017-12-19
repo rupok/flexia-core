@@ -68,3 +68,23 @@ function run_flexia_core() {
 
 }
 run_flexia_core();
+
+/**
+ * Optional usage tracker
+ */
+if( ! class_exists( 'Plugin_Usage_Tracker') ) {
+	require_once dirname( __FILE__ ) . '/includes/class-plugin-usage-tracker.php';
+}
+if( ! function_exists( 'flexia_core_start_plugin_tracking' ) ) {
+	function flexia_core_start_plugin_tracking() {
+		$wisdom = new Plugin_Usage_Tracker(
+			__FILE__,
+			'https://wpdeveloper.net',
+			array(),
+			true,
+			true,
+			1
+		);
+	}
+	flexia_core_start_plugin_tracking();
+}
