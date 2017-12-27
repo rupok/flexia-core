@@ -125,24 +125,20 @@ class Flexia_Core_Shortcodes{
 	function flexia_column( $atts, $content = null ) {
 
 		$atts = shortcode_atts( array(
-				"lg"          => false,
-				"md"          => false,
-				"sm"          => false,
-				"xs"          => false,
-				"offset_lg"   => false,
-				"offset_md"   => false,
-				"offset_sm"   => false,
-				"offset_xs"   => false,
-				"pull_lg"     => false,
-				"pull_md"     => false,
-				"pull_sm"     => false,
-				"pull_xs"     => false,
-				"push_lg"     => false,
-				"push_md"     => false,
-				"push_sm"     => false,
-				"push_xs"     => false,
-				"xclass"      => false,
-				"data"        => false
+				"lg"           => false,
+				"md"           => false,
+				"sm"           => false,
+				"xs"           => false,
+				"offset_lg"    => false,
+				"offset_md"    => false,
+				"offset_sm"    => false,
+				"offset_xs"    => false,
+				"order_lg"     => false,
+				"order_md"     => false,
+				"order_sm"     => false,
+				"order_xs"     => false,
+				"xclass"       => false,
+				"data"         => false
 		), $atts );
 
 		$class  = '';
@@ -154,14 +150,10 @@ class Flexia_Core_Shortcodes{
 		$class .= ( $atts['offset_md'] || $atts['offset_md'] === "0" )      ? ' offset-md-' . $atts['offset_md'] : '';
 		$class .= ( $atts['offset_sm'] || $atts['offset_sm'] === "0" )      ? ' offset-sm-' . $atts['offset_sm'] : '';
 		$class .= ( $atts['offset_xs'] || $atts['offset_xs'] === "0" )      ? ' offset-xs-' . $atts['offset_xs'] : '';
-		$class .= ( $atts['pull_lg']   || $atts['pull_lg'] === "0" )        ? ' pull-lg-' . $atts['pull_lg'] : '';
-		$class .= ( $atts['pull_md']   || $atts['pull_md'] === "0" )        ? ' pull-md-' . $atts['pull_md'] : '';
-		$class .= ( $atts['pull_sm']   || $atts['pull_sm'] === "0" )        ? ' pull-sm-' . $atts['pull_sm'] : '';
-		$class .= ( $atts['pull_xs']   || $atts['pull_xs'] === "0" )        ? ' pull-xs-' . $atts['pull_xs'] : '';
-		$class .= ( $atts['push_lg']   || $atts['push_lg'] === "0" )        ? ' push-lg-' . $atts['push_lg'] : '';
-		$class .= ( $atts['push_md']   || $atts['push_md'] === "0" )        ? ' push-md-' . $atts['push_md'] : '';
-		$class .= ( $atts['push_sm']   || $atts['push_sm'] === "0" )        ? ' push-sm-' . $atts['push_sm'] : '';
-		$class .= ( $atts['push_xs']   || $atts['push_xs'] === "0" )        ? ' push-xs-' . $atts['push_xs'] : '';
+		$class .= ( $atts['order_lg']  || $atts['order_lg'] === "0" )       ? ' order-lg-' . $atts['order_lg'] : '';
+		$class .= ( $atts['order_md']  || $atts['order_md'] === "0" )       ? ' order-md-' . $atts['order_md'] : '';
+		$class .= ( $atts['order_sm']  || $atts['order_sm'] === "0" )       ? ' order-sm-' . $atts['order_sm'] : '';
+		$class .= ( $atts['order_xs']  || $atts['order_xs'] === "0" )       ? ' order-xs-' . $atts['order_xs'] : '';
 		$class .= ( $atts['xclass'] )                                       ? ' ' . $atts['xclass'] : '';
 
 		$data_props = $this->parse_data_attributes( $atts['data'] );
