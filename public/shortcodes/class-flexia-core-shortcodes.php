@@ -125,14 +125,17 @@ class Flexia_Core_Shortcodes{
 	function flexia_column( $atts, $content = null ) {
 
 		$atts = shortcode_atts( array(
+				"xl"           => false,
 				"lg"           => false,
 				"md"           => false,
 				"sm"           => false,
 				"xs"           => false,
+				"offset_xl"    => false,
 				"offset_lg"    => false,
 				"offset_md"    => false,
 				"offset_sm"    => false,
 				"offset_xs"    => false,
+				"order_xl"     => false,
 				"order_lg"     => false,
 				"order_md"     => false,
 				"order_sm"     => false,
@@ -142,14 +145,17 @@ class Flexia_Core_Shortcodes{
 		), $atts );
 
 		$class  = '';
+		$class .= ( $atts['xl'] )			                                ? ' col-xl-' . $atts['xl'] : '';
 		$class .= ( $atts['lg'] )			                                ? ' col-lg-' . $atts['lg'] : '';
 		$class .= ( $atts['md'] )                                           ? ' col-md-' . $atts['md'] : '';
 		$class .= ( $atts['sm'] )                                           ? ' col-sm-' . $atts['sm'] : '';
 		$class .= ( $atts['xs'] )                                           ? ' col-xs-' . $atts['xs'] : '';
+		$class .= ( $atts['offset_xl'] || $atts['offset_xl'] === "0" )      ? ' offset-xl-' . $atts['offset_xl'] : '';
 		$class .= ( $atts['offset_lg'] || $atts['offset_lg'] === "0" )      ? ' offset-lg-' . $atts['offset_lg'] : '';
 		$class .= ( $atts['offset_md'] || $atts['offset_md'] === "0" )      ? ' offset-md-' . $atts['offset_md'] : '';
 		$class .= ( $atts['offset_sm'] || $atts['offset_sm'] === "0" )      ? ' offset-sm-' . $atts['offset_sm'] : '';
 		$class .= ( $atts['offset_xs'] || $atts['offset_xs'] === "0" )      ? ' offset-xs-' . $atts['offset_xs'] : '';
+		$class .= ( $atts['order_xl']  || $atts['order_xl'] === "0" )       ? ' order-xl-' . $atts['order_xl'] : '';
 		$class .= ( $atts['order_lg']  || $atts['order_lg'] === "0" )       ? ' order-lg-' . $atts['order_lg'] : '';
 		$class .= ( $atts['order_md']  || $atts['order_md'] === "0" )       ? ' order-md-' . $atts['order_md'] : '';
 		$class .= ( $atts['order_sm']  || $atts['order_sm'] === "0" )       ? ' order-sm-' . $atts['order_sm'] : '';
