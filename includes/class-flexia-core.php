@@ -117,6 +117,11 @@ class Flexia_Core {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-flexia-core-admin.php';
 
 		/**
+		 * Flexia Core Customizer
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/flexia-core-customizer.php';
+
+		/**
 		 * Requiring all partial pages for admin settings
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/flexia-core-admin-pages.php';
