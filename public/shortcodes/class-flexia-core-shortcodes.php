@@ -30,10 +30,10 @@ class Flexia_Core_Shortcodes{
 	function add_shortcodes() {
 
 		$shortcodes = array(
-			'row',
-			'column',
 			'container',
 			'container-fluid',
+			'row',
+			'column',
 		);
 
 		foreach ( $shortcodes as $shortcode ) {
@@ -178,7 +178,7 @@ class Flexia_Core_Shortcodes{
 	 * Parse data-attributes for shortcodes
 	 * @since 1.1.0
 	 */
-	
+
 	function parse_data_attributes( $data ) {
 
 		$data_props = '';
