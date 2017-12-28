@@ -88,13 +88,26 @@ data | Data attribute and value pairs separated by a comma. | optional | any tex
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 xclass | Any extra classes you want to add | optional | any text | none
-data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe. | optional | any text | none
 
 #### [row] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe. | optional | any text | none
+
+#### Container and Row example with parameteres :
+
+	[container fluid="true"]
+		[row xclass="flexia-container" data="some-data"]
+			[column md="6"]
+				...
+			[/column]
+			[column md="6"]
+				...
+			[/column]
+		[/row]
+	[/container]
 
 #### [column] parameters
 Parameter | Description | Required | Values | Default
@@ -116,5 +129,19 @@ order_lg | Order on column on large screens | optional | 1-12 | false
 order_xl | Order on column on extra large screens | optional | 1-12 | false
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe. | optional | any text | none
+
+#### Columns example with parameteres :
+
+	[container]
+		[row]
+			[column md="4" xs="6" order-xs="2"]
+				...
+			[/column]
+			[column md="4" xs="6" order-xs="1"]
+				...
+			[/column]
+		[/row]
+	[/container]
+
 
 [Bootstrap 4 grid documentation](https://getbootstrap.com/docs/4.0/layout/grid/).
