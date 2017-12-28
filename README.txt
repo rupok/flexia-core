@@ -4,19 +4,19 @@ Contributors: re_enter_rupok, codetic
 Tags: flexia, shortcodes, bootstrap-4, metabox, customizer, widgets
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Core plugin for [Flexia](https://wordpress.org/themes/flexia/) theme. Controls all the plugin territory functionalities for Flexia. 
+Core plugin for [Flexia](https://wordpress.org/themes/flexia/) theme. Controls all the plugin territory functionality for Flexia. 
 
 == Description ==
 
-Core plugin for [Flexia](https://wordpress.org/themes/flexia/) theme. Controls all the plugin territory functionalities for Flexia. 
+Core plugin for [Flexia](https://wordpress.org/themes/flexia/) theme. Controls all the plugin territory functionality for Flexia. 
 
 ## Requirements
 
-This is a specialized plugin for the theme [Flexia](https://wordpress.org/themes/flexia/)) that is available for free on [WordPress.org](https://wordpress.org/themes/flexia/). But since plugin works independently, it will work with any standard theme if you deactivate Flexia. 
+This is a specialized plugin for the theme [Flexia](https://wordpress.org/themes/flexia/) that is available for free on [WordPress.org](https://wordpress.org/themes/flexia/). But since plugin works independently, it will work with any standard theme if you deactivate Flexia. 
 
 ## Features
 
@@ -113,6 +113,11 @@ It's a specialized plugin for Flexia theme, you need to install Flexia to get mo
 
 
 == Changelog ==
+
+= 1.1.0 =
+* Bootstrap 4 Grid shortcodes added
+* Custom JavaScripts option added to Customizer
+* Lots of improvements
 
 = 1.0.0 =
 * Initial release
