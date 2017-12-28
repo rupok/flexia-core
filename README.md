@@ -9,12 +9,16 @@ This is a specialized plugin for the theme [Flexia](https://github.com/rupok/fle
 
 The plan is to keep all the plugin territory functionality of Flexia within this plugin and it's a continuous process. It will provide the shortcodes, metabox and extra Customizer options.
 
+* Shortcodes
+* Extra Customizer Options
+* Metaboxes
+
 
 ## Customizer Options
 
 ### Custom JavaScripts
 
-You can add custom JavaScripts to your site header and footer through Customizer and dit your scripts with CodeMirror editor. You can place any custom JavaScript, Google Analytics, Facebook Pixel or any kind of embed script. Extremely helpful if you need to place any custom javascript or jQuery code to header or footer. This plugin gives you the ability to place different scripts to header or footer separately. Uses Customizer so you can edit the code live and see the changes on the fly.
+You can add custom JavaScripts to your site header and footer through Customizer and edit your scripts with CodeMirror editor. You can place any custom JavaScript, Google Analytics, Facebook Pixel or any kind of embed script. Extremely helpful if you need to place any custom javascript or jQuery code to header or footer. This plugin gives you the ability to place different scripts to header or footer separately. Uses Customizer so you can edit the code live and see the changes on the fly.
 
 * CodeMirror Editor
 * Ability to add custom scripts to wp header.
@@ -27,8 +31,12 @@ You can add custom JavaScripts to your site header and footer through Customizer
 ## Shortcodes
 
 * [Bootstrap 4 Grid](#grid)
+  * Container
+  * Container Fluid
+  * Row
+  * Columns (1-12)
 
-# Usage
+## Shortcode usage
 
 
 ### Grid
