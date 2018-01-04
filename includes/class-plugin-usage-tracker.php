@@ -2,7 +2,7 @@
 /**
  * This is the class that sends all the data back to the home site
  * It also handles opting in and deactivation
- * @version 1.1.1
+ * @version 1.1.2
  */
 
 // Exit if accessed directly
@@ -10,11 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if( ! class_exists( 'Plugin_Usage_Tracker') ) {
+if( ! class_exists( 'Flexia_Core_Plugin_Usage_Tracker') ) {
 	
-	class Plugin_Usage_Tracker {
+	class Flexia_Core_Plugin_Usage_Tracker {
 		
-		private $wisdom_version = '1.1.1';
+		private $wisdom_version = '1.1.2';
 		private $home_url = '';
 		private $plugin_file = '';
 		private $plugin_name = '';
@@ -72,13 +72,13 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 			// Check whether opt-in is required
 			// If not, then tracking is allowed
 			if( ! $this->require_optin ) {
+				$this->set_can_collect_email( true, $this->plugin_name );
 				$this->set_is_tracking_allowed( true );
 				$this->update_block_notice();
-				$this->do_tracking();
+				$this->do_tracking( true );
 			}
 
 			// Hook our do_tracking function to the daily action
-			// add_filter( 'cron_schedules', array( $this, 'add_weekly_cron_schedule' ) );
 			add_action( 'put_do_weekly_action', array( $this, 'do_tracking' ) );
 
 			// Use this action for local testing
@@ -96,19 +96,6 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 		}
 		
 		/**
-		 * Add weekly option to the cron schedule
-		 *
-		 * @since 1.1.2
-		 */
-		public function add_weekly_cron_schedule( $schedules ) {
-			$schedules['weekly'] = array(
-				'interval'	=> 604800,
-				'display'	=> __( 'Once weekly', 'put-usage-tracker' )
-			);
-			return $schedules;
-		}
-		
-		/**
 		 * When the plugin is activated
 		 * Create scheduled event
 		 * And check if tracking is enabled - perhaps the plugin has been reactivated
@@ -120,8 +107,6 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 			if ( ! wp_next_scheduled( 'put_do_weekly_action' ) ) {
 				wp_schedule_event( time(), 'daily', 'put_do_weekly_action' );
 			}
-			// Run tracking here in case plugin has been reactivated
-			$this->do_tracking();
 		}
 		
 		/**
@@ -131,8 +116,9 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 		 * Then send it back
 		 *
 		 * @since 1.0.0
+		 * @param $force	Force tracking if it's not time
 		 */
-		public function do_tracking() {
+		public function do_tracking( $force=false ) {
 			// If the home site hasn't been defined, we just drop out. Nothing much we can do.
 			if ( ! $this->home_url ) {
 				return;
@@ -146,9 +132,11 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 			
 			// Check to see if it's time to track
 			$track_time = $this->get_is_time_to_track();
-			if( ! $track_time ) {
+			if( ! $track_time && ! $force ) {
 				return;
 			}
+			
+			$this->set_admin_email();
 	
 			// Get our data
 			$body = $this->get_data();
@@ -212,7 +200,7 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 			
 			// Collect the email if the correct option has been set
 			if( $this->get_can_collect_email() ) {
-				$body['email'] = get_bloginfo( 'admin_email' );
+				$body['email'] = $this->get_admin_email();
 			}
 			$body['marketing_method'] = $this->marketing;
 	
@@ -518,6 +506,53 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 		}
 		
 		/**
+		 * Get the correct email address to use
+		 * @since 1.1.2
+		 * @return Email address
+		 */
+		public function get_admin_email() {
+			// The wisdom_collect_email option is an array of plugins that are being tracked
+			$email = get_option( 'wisdom_admin_emails' );
+			// If this plugin is in the array, then we can collect the email address
+			if( isset( $email[$this->plugin_name] ) ) {
+				return $email[$this->plugin_name];
+			}
+			return false;
+		}
+		
+		/**
+		 * Set the correct email address to use
+		 * There might be more than one admin on the site
+		 * So we only use the first admin's email address
+		 * @param $email	Email address to set
+		 * @param $plugin	Plugin name to set email address for
+		 * @since 1.1.2
+		 */
+		public function set_admin_email( $email=null, $plugin=null ) {
+			if( empty( $plugin ) ) {
+				$plugin = $this->plugin_name;
+			}
+			// If no email address passed, try to get the current user's email
+			if( empty( $email ) ) {
+				// Have to check that current user object is available
+				if( function_exists( 'wp_get_current_user' ) ) {
+					$current_user = wp_get_current_user();
+					$email = $current_user->user_email;
+				}
+			}
+			// The wisdom_admin_emails option is an array of admin email addresses
+			$admin_emails = get_option( 'wisdom_admin_emails' );
+			if( empty( $admin_emails ) || ! is_array( $admin_emails ) ) {
+				// If nothing exists in the option yet, start a new array with the plugin name
+				$admin_emails = array( $plugin => sanitize_email( $email ) );
+			} else if( empty( $admin_emails[$plugin] ) ) {
+				// Else add the email address to the array, if not already set
+				$admin_emails[$plugin] = sanitize_email( $email );
+			}
+			update_option( 'wisdom_admin_emails', $admin_emails );
+		}
+		
+		/**
 		 * Display the admin notice to users to allow them to opt in
 		 *
 		 * @since 1.0.0
@@ -529,7 +564,7 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 				$action = sanitize_text_field( $_GET['plugin_action'] );
 				if( $action == 'yes' ) {
 					$this->set_is_tracking_allowed( true, $plugin );
-					$this->do_tracking(); // Run this straightaway
+					$this->do_tracking( true ); // Run this straightaway
 				} else {
 					$this->set_is_tracking_allowed( false, $plugin );
 				}
@@ -549,7 +584,7 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 
 			// @credit EDD
 			// Don't bother asking user to opt in if they're in local dev
-			if ( stristr( network_site_url( '/' ), 'local' ) !== false || stristr( network_site_url( '/' ), 'localhost' ) !== false || stristr( network_site_url( '/' ), ':8888' ) !== false ) {
+			if ( stristr( network_site_url( '/' ), 'dev' ) !== false || stristr( network_site_url( '/' ), 'localhost' ) !== false || stristr( network_site_url( '/' ), ':8888' ) !== false ) {
 				$this->update_block_notice();
 			} else {
 				
@@ -584,11 +619,11 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 					$notice_text = __( 'Thank you for installing our plugin. We would like to track its usage on your site. We don\'t record any sensitive data, only information regarding the WordPress environment and plugin settings, which we will use to help us make improvements to the plugin. Tracking is completely optional.', 'plugin-usage-tracker' );
 				} else {
 					// If we have option 1 for marketing, we include reference to sending product information here
-					$notice_text = __( 'Want to help make <strong>Flexia</strong> even more awesome? You can get a <strong>25% discount coupon</strong> for Premium extensions if you allow us to track the usage. <a class="insights-data-we-collect" href="#">What we collect.</a>', 'plugin-usage-tracker' );
+					$notice_text = __( 'Want to help make <strong>Flexia</strong> even more awesome? You can get a <strong>25% discount coupon</strong> for Premium extensions if you allow us to track the usage. <a class="flexia-core-insights-data-we-collect" href="#">What we collect.</a>', 'plugin-usage-tracker' );
 				}
 				// And we allow you to filter the text anyway
 				$notice_text = apply_filters( 'wisdom_notice_text_' . esc_attr( $this->plugin_name ), $notice_text ); ?>
-							
+				
 				<div class="notice notice-info updated put-dismiss-notice flexia-usage-notice">
 					<div class="flexia-usage-notice-img">
 						<?php echo '<img class="flexia-logo-inline" src="' . plugins_url( 'admin/img/flexia-logo.png', dirname(__FILE__) ) . '" > '; ?>
@@ -599,11 +634,11 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 							<p><?php echo __( 'We collect non-sensitive diagnostic data and plugin usage information. Your site URL, WordPress & PHP version, plugins & themes and email address to send you the discount coupon. This data lets us make sure this plugin always stays compatible with the most popular plugins and themes. No spam, I promise.' ); ?></p>
 						</div>
 						<p>
-							<a href="<?php echo esc_url( $url_yes ); ?>" class="button-primary"><?php _e( 'I am in', 'plugin-usage-tracker' ); ?></a>
+							<a href="<?php echo esc_url( $url_yes ); ?>" class="button-primary"><?php _e( 'Sure, I\'d like to help', 'plugin-usage-tracker' ); ?></a>
 							<a href="<?php echo esc_url( $url_no ); ?>" class="button-secondary"><?php _e( 'No Thanks', 'plugin-usage-tracker' ); ?></a>
 						</p>
 					</div>
-		            <?php echo "<script type='text/javascript'>jQuery('.insights-data-we-collect').on('click', function(e) {
+		            <?php echo "<script type='text/javascript'>jQuery('.flexia-core-insights-data-we-collect').on('click', function(e) {
 		                    e.preventDefault();
 		                    jQuery('.flexia-core-insights-data').slideToggle('fast');
 		                });
@@ -626,7 +661,7 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 				// Set marketing optin
 				$this->set_can_collect_email( sanitize_text_field( $_GET['marketing_optin'] ), $this->plugin_name );
 				// Do tracking
-				$this->do_tracking();
+				$this->do_tracking( true );
 			} else if( isset( $_GET['marketing'] ) && $_GET['marketing']=='yes' ) {
 				// Display the notice requesting permission to collect email address
 				// Retrieve current plugin information
@@ -687,7 +722,7 @@ if( ! class_exists( 'Plugin_Usage_Tracker') ) {
 				__( 'Set up is too difficult', 'plugin-usage-tracker' ),
 				__( 'Lack of documentation', 'plugin-usage-tracker' ),
 				__( 'Not the features I wanted', 'plugin-usage-tracker' ),
-				__( 'Found a better theme', 'plugin-usage-tracker' ),
+				__( 'Found a better plugin', 'plugin-usage-tracker' ),
 				__( 'Installed by mistake', 'plugin-usage-tracker' ),
 				__( 'Only required temporarily', 'plugin-usage-tracker' ),
 				__( 'Didn\'t work', 'plugin-usage-tracker' )
