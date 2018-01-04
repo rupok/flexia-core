@@ -46,7 +46,9 @@ if( ! class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 					'flexia_core_page_settings',
 					'Flexia Page Settings',
 					array( $this, 'flexia_core_metabox_html' ),
-					$screen
+					$screen,
+					'normal',
+					'high'
 				);
 			}
 
@@ -90,6 +92,15 @@ if( ! class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 			<div class="flexia-core-metabox-wrapper">
 				<div class="flexia-core-metabox-row">
 					<div class="flexia-core-metabox-left">
+						<label for="flexia_add_body_class"><?php _e( 'Additional Body Class: ', 'flexia-core' ); ?></label>
+					</div>
+					<div class="flexia-core-metabox-right">
+						<input type="text" name="flexia_add_body_class" class="regular-text" value="<?php echo $body_class; ?>">
+						<p class="description">Add an extra class to body for this page.</p>
+					</div>
+				</div>
+				<div class="flexia-core-metabox-row">
+					<div class="flexia-core-metabox-left">
 						<label for="flexia_hide_page_title"><?php _e( 'Page Title: ', 'flexia-core' ); ?></label>
 					</div>
 					<div class="flexia-core-metabox-right">
@@ -97,16 +108,7 @@ if( ! class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 				            <option value="1" <?php selected( $page_title, '1' ); ?>>Show</option>
 				            <option value="0" <?php selected( $page_title, '0' ); ?>>Hide</option>
 				        </select>
-				        <p class="description">It will allow you to show/hide the page title.</p>
-					</div>
-				</div>
-				<div class="flexia-core-metabox-row">
-					<div class="flexia-core-metabox-left">
-						<label for="flexia_add_body_class"><?php _e( 'Add Body Class: ', 'flexia-core' ); ?></label>
-					</div>
-					<div class="flexia-core-metabox-right">
-						<input type="text" name="flexia_add_body_class" class="regular-text" value="<?php echo $body_class; ?>">
-						<p class="description">This class will be added in the body tag of your theme.</p>
+				        <p class="description">Show or hide the page title.</p>
 					</div>
 				</div>
 			</div>

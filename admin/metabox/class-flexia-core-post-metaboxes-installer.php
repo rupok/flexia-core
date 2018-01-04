@@ -24,17 +24,14 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		 * @since   1.1.0
 		 */
 		public function flexia_core_add_metabox() {
-
-			$screens = ['post'];
-			foreach( $screens as $screen ) {
 				add_meta_box(
 					'flexia_core_page_settings',
 					'Flexia Post Settings',
 					array( $this, 'flexia_core_metabox_html' ),
-					$screen
+					'post',
+					'normal',
+					'high'
 				);
-			}
-
 		}
 
 		/**
@@ -103,11 +100,11 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				<!-- Add Body Class -->
 				<div class="flexia-core-metabox-row">
 					<div class="flexia-core-metabox-left">
-						<label for="flexia_add_body_class"><?php _e( 'Add Body Class: ', 'flexia-core' ); ?></label>
+						<label for="flexia_add_body_class"><?php _e( 'Additional Body Class: ', 'flexia-core' ); ?></label>
 					</div>
 					<div class="flexia-core-metabox-right">
 						<input type="text" name="flexia_add_body_class" class="regular-text" value="<?php echo $body_class; ?>">
-						<p class="description">This class will be added in the body tag of your theme.</p>
+						<p class="description">Add an extra class to body for this post.</p>
 					</div>
 				</div>
 
@@ -118,11 +115,11 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 					</div>
 					<div class="flexia-core-metabox-right">
 				        <select name="flexia_hide_post_title" id="flexia_hide_post_title" class="regular-text">
-				            <option value="large" <?php selected( $page_title, 'large' ); ?>>Large Header</option>
+				            <option value="large" <?php selected( $page_title, 'large' ); ?>>Large Header (Featured Image Background)</option>
 				            <option value="simple" <?php selected( $page_title, 'simple' ); ?>>Simple Header</option>
 				            <option value="none" <?php selected( $page_title, 'none' ); ?>>No Header</option>
 				        </select>
-				        <p class="description">It will allow you to show/hide the page title.</p>
+				        <p class="description">Show or hide the page title.</p>
 					</div>
 				</div>
 
@@ -136,21 +133,21 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				            <option value="yes" <?php selected( $footer_meta, 'yes' ); ?>>Yes</option>
 				            <option value="no" <?php selected( $footer_meta, 'no' ); ?>>No</option>
 				        </select>
-				        <p class="description">It will allow you to show/hide the post footer meta.</p>
+				        <p class="description">Show or hide the footer meta (author info).</p>
 					</div>
 				</div>
 
 				<!-- Show/Hide Footer Post Sharer -->
 				<div class="flexia-core-metabox-row">
 					<div class="flexia-core-metabox-left">
-						<label for="flexia_post_sharer"><?php _e( 'Show Post Sharer: ', 'flexia-core' ); ?></label>
+						<label for="flexia_post_sharer"><?php _e( 'Show Social Sharer: ', 'flexia-core' ); ?></label>
 					</div>
 					<div class="flexia-core-metabox-right">
 				        <select name="flexia_post_sharer" id="flexia_post_sharer" class="regular-text">
 				            <option value="yes" <?php selected( $post_sharer, 'yes' ); ?>>Yes</option>
 				            <option value="no" <?php selected( $post_sharer, 'no' ); ?>>No</option>
 				        </select>
-				        <p class="description">It will allow you to show/hide the post sharer.</p>
+				        <p class="description">Show or hide the the post social sharing options.</p>
 					</div>
 				</div>
 
@@ -164,7 +161,7 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				            <option value="yes" <?php selected( $post_navigation, 'yes' ); ?>>Yes</option>
 				            <option value="no" <?php selected( $post_navigation, 'no' ); ?>>No</option>
 				        </select>
-				        <p class="description">It will allow you to show/hide the post navigation.</p>
+				        <p class="description">Show or hide the next/previous post navigation.</p>
 					</div>
 				</div>
 			</div>
