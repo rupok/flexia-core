@@ -135,7 +135,8 @@ class Flexia_Core {
 		/**
 		 * Requiring flexia metaboxes
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-flexia-core-metaboxes-installer.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/metabox/class-flexia-core-metaboxes-installer.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/metabox/class-flexia-core-post-metaboxes-installer.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing

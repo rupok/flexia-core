@@ -15,12 +15,11 @@ if( ! class_exists( 'Flexia_Core_Metabox_Installer' ) ) {
 
 			add_action( 'add_meta_boxes', array( $this, 'flexia_core_add_metabox' ) );
 			add_action( 'save_post', array( $this, 'flexia_core_save_metabox_value' ) );
-			add_filter( 'body_class', array( $this, 'flexia_core_fetch_body_class' ), 10, 1 );
 
 		}
 
 		/**
-		 * This method will get all post types available
+		 * This method will get all post types available ( exclude 'post' )
 		 *
 		 * @since   1.1.0
 		 */
@@ -29,6 +28,8 @@ if( ! class_exists( 'Flexia_Core_Metabox_Installer' ) ) {
 			foreach( $post_types as $post_type ) {
 				$all_post_types[] = $post_type;
 			}
+			$delete_key = array_search( 'post', $all_post_types );
+			unset( $all_post_types[$delete_key] );
 			return $all_post_types;
 		}
 
@@ -110,17 +111,6 @@ if( ! class_exists( 'Flexia_Core_Metabox_Installer' ) ) {
 				</div>
 			</div>
 			<?php
-		}
-
-		/**
-		 *
-		 */
-		public function flexia_core_fetch_body_class( $classes ) {
-
-			global $post;
-			$classes[] = get_post_meta( $post->ID, '_flexia_meta_key_body_class', true );
-			return $classes;
-
 		}
 
 
