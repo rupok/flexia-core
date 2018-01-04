@@ -2,14 +2,14 @@
 /**
  *
  */
-if( ! class_exists( 'Flexia_Core_Metabox_Installer' ) ) {
+if( ! class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 
 	/**
 	 * Flexia Core Metabox Installer
 	 *
 	 * @since  1.1.0
 	 */
-	class Flexia_Core_Metabox_Installer {
+	class Flexia_Core_Global_Metabox {
 
 		public function __construct() {
 
@@ -116,6 +116,6 @@ if( ! class_exists( 'Flexia_Core_Metabox_Installer' ) ) {
 
 	}
 
-	$flexia_metaboxes = new Flexia_Core_Metabox_Installer();
+	$flexia_metaboxes = new Flexia_Core_Global_Metabox();
 
 }
