@@ -221,3 +221,28 @@
 	font-size: 12px;
 	font-weight: lighter;
 }
+
+/* Metabox Styles */
+.flexia-core-metabox-wrapper {
+	width: 100%;
+	height: auto;
+}
+.flexia-core-metabox-wrapper .flexia-core-metabox-row {
+	display: flex;
+	flex-flow: flex-start;
+	padding: 15px 0px 15px 10px;
+	border-bottom: 1px solid rgba( 0,0,0,0.05 );
+}
+.flexia-core-metabox-wrapper .flexia-core-metabox-row .flexia-core-metabox-left,
+.flexia-core-metabox-wrapper .flexia-core-metabox-row .flexia-core-metabox-right {
+	flex: 1 1 auto;
+}
+.flexia-core-metabox-wrapper .flexia-core-metabox-row .flexia-core-metabox-left {
+	flex-basis: 25%;
+}
+.flexia-core-metabox-wrapper .flexia-core-metabox-row .flexia-core-metabox-left label {
+	font-weight: 600;
+}
+.flexia-core-metabox-wrapper .flexia-core-metabox-row .flexia-core-metabox-right {
+	flex-basis: 75%;
+}
