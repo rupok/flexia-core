@@ -7,7 +7,7 @@ if( ! class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 	/**
 	 * Flexia Core Metabox Installer
 	 *
-	 * @since  1.1.0
+	 * @since  1.2.0
 	 */
 	class Flexia_Core_Global_Metabox {
 
@@ -21,7 +21,7 @@ if( ! class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 		/**
 		 * This method will get all post types available ( exclude 'post' )
 		 *
-		 * @since   1.1.0
+		 * @since   1.2.0
 		 */
 		public function flexia_core_get_post_types() {
 			$post_types = get_post_types( '', 'names' );
@@ -36,7 +36,7 @@ if( ! class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 		/**
 		 * This method will create metaboxes
 		 *
-		 * @since   1.1.0
+		 * @since   1.2.0
 		 */
 		public function flexia_core_add_metabox() {
 
@@ -57,7 +57,7 @@ if( ! class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 		/**
 		 * This method will save metabox's data
 		 *
-		 * @since   1.1.0
+		 * @since   1.2.0
 		 */
 		public function flexia_core_save_metabox_value( $post_id ) {
 
@@ -82,7 +82,7 @@ if( ! class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 		/**
 		 * This method will generate metabox markup
 		 *
-		 * @since   1.1.0
+		 * @since   1.2.0
 		 */
 		public function flexia_core_metabox_html( $post ) {
 

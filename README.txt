@@ -4,7 +4,7 @@ Contributors: re_enter_rupok, codetic
 Tags: flexia, shortcodes, bootstrap-4, metabox, customizer, widgets
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,6 +43,15 @@ You can add custom JavaScripts to your site header and footer through Customizer
 * Ability to add any embed code.
 
 Go to **Customize > Custom JavaScripts** to add your scripts.
+
+## Custom Metaboxes (Page and Post Settings)
+
+* Post Header style control
+* Additional Body Classes option
+* Show/Hide Page/Post Title
+* Show/Hide Post Meta
+* Show/Hide Post Navigation
+* Show/Hide Post Social Sharing
 
 ## Shortcodes
 
@@ -113,6 +122,11 @@ It's a specialized plugin for Flexia theme, you need to install Flexia to get mo
 
 
 == Changelog ==
+
+= 1.2.0 =
+* Page Settings added
+* Additional Body class option added to Page Settings
+* Page Title show/hide option added to Page Settings
 
 = 1.1.0 =
 * Bootstrap 4 Grid shortcodes added
