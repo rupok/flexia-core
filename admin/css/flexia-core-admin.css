@@ -246,3 +246,9 @@
 .flexia-core-metabox-wrapper .flexia-core-metabox-row .flexia-core-metabox-right {
 	flex-basis: 75%;
 }
+.hide-metabox {
+	display: none;
+}
+.show-metabox {
+	display: block;
+}
