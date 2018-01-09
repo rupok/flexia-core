@@ -203,7 +203,7 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				            <option value="yes" <?php selected( $header_author_meta, 'yes' ); ?>>Yes</option>
 				            <option value="no" <?php selected( $header_author_meta, 'no' ); ?>>No</option>
 				        </select>
-				        <p class="description">Show or hide the header meta (post author).</p>
+				        <p class="description">Show or hide the post author.</p>
 					</div>
 				</div>
 
@@ -217,7 +217,7 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				            <option value="yes" <?php selected( $header_post_date, 'yes' ); ?>>Yes</option>
 				            <option value="no" <?php selected( $header_post_date, 'no' ); ?>>No</option>
 				        </select>
-				        <p class="description">Show or hide the header meta (post date).</p>
+				        <p class="description">Show or hide the post date.</p>
 					</div>
 				</div>
 
@@ -231,21 +231,21 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				            <option value="yes" <?php selected( $header_post_date, 'yes' ); ?>>Yes</option>
 				            <option value="no" <?php selected( $header_post_date, 'no' ); ?>>No</option>
 				        </select>
-				        <p class="description">Show or hide the header meta (post category).</p>
+				        <p class="description">Show or hide the post category.</p>
 					</div>
 				</div>
 
 				<!-- Show/Hide Post Comments ( if post header meta is active ) -->
 				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-hide-metabox">
 					<div class="flexia-core-metabox-left">
-						<label for="flexia_post_header_post_comments"><?php _e( 'Show Post Comments: ', 'flexia-core' ); ?></label>
+						<label for="flexia_post_header_post_comments"><?php _e( 'Show Post Comments Count: ', 'flexia-core' ); ?></label>
 					</div>
 					<div class="flexia-core-metabox-right">
 				        <select name="flexia_post_header_post_comments" id="flexia_post_header_post_comments" class="regular-text">
 				            <option value="yes" <?php selected( $header_post_comments, 'yes' ); ?>>Yes</option>
 				            <option value="no" <?php selected( $header_post_comments, 'no' ); ?>>No</option>
 				        </select>
-				        <p class="description">Show or hide the header meta (post comments).</p>
+				        <p class="description">Show or hide post comments count.</p>
 					</div>
 				</div>
 
