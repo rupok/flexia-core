@@ -41,6 +41,14 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		 */
 		public function flexia_core_save_metabox_value( $post_id ) {
 
+			if( !isset( $_POST['flexia_post_metabox_nonce'] ) || !wp_verify_nonce( $_POST['flexia_post_metabox_nonce'], 'flexia_post_metabox_nonce_id' ) ) {
+				return false;
+			}
+
+			if( !current_user_can( 'edit_post', $post_id ) ) {
+				return false;
+			}
+
 			if( array_key_exists( 'flexia_hide_post_title', $_POST ) ) {
 				update_post_meta(
 					$post_id,
@@ -70,6 +78,30 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 					$post_id,
 					'_flexia_post_meta_key_header_author_meta',
 					$_POST['flexia_post_header_author_meta']
+				);
+			}
+
+			if( array_key_exists( 'flexia_post_header_post_date', $_POST ) ) {
+				update_post_meta(
+					$post_id,
+					'_flexia_post_meta_key_header_post_date',
+					$_POST['flexia_post_header_post_date']
+				);
+			}
+
+			if( array_key_exists( 'flexia_post_header_post_category', $_POST ) ) {
+				update_post_meta(
+					$post_id,
+					'_flexia_post_meta_key_header_post_category',
+					$_POST['flexia_post_header_post_category']
+				);
+			}
+
+			if( array_key_exists( 'flexia_post_header_post_comments', $_POST ) ) {
+				update_post_meta(
+					$post_id,
+					'_flexia_post_meta_key_header_post_comments',
+					$_POST['flexia_post_header_post_comments']
 				);
 			}
 
@@ -106,15 +138,21 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 		 */
 		public function flexia_core_metabox_html( $post ) {
 
-			$page_title = get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
-			$body_class = get_post_meta( $post->ID, '_flexia_post_meta_key_body_class', true );
-			$header_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
+			$page_title 		= get_post_meta( $post->ID, '_flexia_post_meta_key_page_title', true );
+			$body_class 		= get_post_meta( $post->ID, '_flexia_post_meta_key_body_class', true );
+			$header_meta 		= get_post_meta( $post->ID, '_flexia_post_meta_key_header_meta', true );
 			$header_author_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_header_author_meta', true );
-			$footer_meta = get_post_meta( $post->ID, '_flexia_post_meta_key_footer_meta', true );
-			$post_sharer = get_post_meta( $post->ID, '_flexia_post_meta_key_post_sharer', true );
-			$post_navigation = get_post_meta( $post->ID, '_flexia_post_meta_key_post_navigation', true );
+			$header_post_date 	= get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_date', true );
+			$header_post_category 	= get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_category', true );
+			$header_post_comments 	= get_post_meta( $post->ID, '_flexia_post_meta_key_header_post_comments', true );
+			$footer_meta 		= get_post_meta( $post->ID, '_flexia_post_meta_key_footer_meta', true );
+			$post_sharer 		= get_post_meta( $post->ID, '_flexia_post_meta_key_post_sharer', true );
+			$post_navigation 	= get_post_meta( $post->ID, '_flexia_post_meta_key_post_navigation', true );
 			?>
 			<div class="flexia-core-metabox-wrapper">
+				<!-- WP Nonce Field -->
+				<?php wp_nonce_field( 'flexia_post_metabox_nonce_id', 'flexia_post_metabox_nonce' ); ?>
+
 				<!-- Add Body Class -->
 				<div class="flexia-core-metabox-row">
 					<div class="flexia-core-metabox-left">
@@ -156,7 +194,7 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				</div>
 
 				<!-- Show/Hide Post Author Meta ( if post header meta is active ) -->
-				<!-- <div class="flexia-core-metabox-row hide-metabox">
+				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-hide-metabox">
 					<div class="flexia-core-metabox-left">
 						<label for="flexia_post_header_author_meta"><?php _e( 'Show Post Author: ', 'flexia-core' ); ?></label>
 					</div>
@@ -167,7 +205,49 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				        </select>
 				        <p class="description">Show or hide the header meta (post author).</p>
 					</div>
-				</div> -->
+				</div>
+
+				<!-- Show/Hide Post Date ( if post header meta is active ) -->
+				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-hide-metabox">
+					<div class="flexia-core-metabox-left">
+						<label for="flexia_post_header_post_date"><?php _e( 'Show Post Date: ', 'flexia-core' ); ?></label>
+					</div>
+					<div class="flexia-core-metabox-right">
+				        <select name="flexia_post_header_post_date" id="flexia_post_header_post_date" class="regular-text">
+				            <option value="yes" <?php selected( $header_post_date, 'yes' ); ?>>Yes</option>
+				            <option value="no" <?php selected( $header_post_date, 'no' ); ?>>No</option>
+				        </select>
+				        <p class="description">Show or hide the header meta (post date).</p>
+					</div>
+				</div>
+
+				<!-- Show/Hide Post Category ( if post header meta is active ) -->
+				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-hide-metabox">
+					<div class="flexia-core-metabox-left">
+						<label for="flexia_post_header_post_category"><?php _e( 'Show Post Category: ', 'flexia-core' ); ?></label>
+					</div>
+					<div class="flexia-core-metabox-right">
+				        <select name="flexia_post_header_post_category" id="flexia_post_header_post_category" class="regular-text">
+				            <option value="yes" <?php selected( $header_post_date, 'yes' ); ?>>Yes</option>
+				            <option value="no" <?php selected( $header_post_date, 'no' ); ?>>No</option>
+				        </select>
+				        <p class="description">Show or hide the header meta (post category).</p>
+					</div>
+				</div>
+
+				<!-- Show/Hide Post Comments ( if post header meta is active ) -->
+				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-hide-metabox">
+					<div class="flexia-core-metabox-left">
+						<label for="flexia_post_header_post_comments"><?php _e( 'Show Post Comments: ', 'flexia-core' ); ?></label>
+					</div>
+					<div class="flexia-core-metabox-right">
+				        <select name="flexia_post_header_post_comments" id="flexia_post_header_post_comments" class="regular-text">
+				            <option value="yes" <?php selected( $header_post_comments, 'yes' ); ?>>Yes</option>
+				            <option value="no" <?php selected( $header_post_comments, 'no' ); ?>>No</option>
+				        </select>
+				        <p class="description">Show or hide the header meta (post comments).</p>
+					</div>
+				</div>
 
 				<!-- Show/Hide Footer Meta -->
 				<div class="flexia-core-metabox-row">
@@ -212,14 +292,27 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				</div>
 			</div>
 
-			<!-- <script>
+			<script>
 				jQuery(document).ready(function($){
 					var headerMetaStatus = $( '#flexia_post_header_meta' ).val();
-					if(  ) {
-
+					var target = $( '.js-flexia-core-alter' );
+					// Default
+					if( headerMetaStatus == 'yes' ) {
+						target.removeClass( 'flexia-hide-metabox' ).addClass( 'flexia-show-metabox' );
+					}else {
+						target.removeClass( 'flexia-show-metabox' ).addClass( 'flexia-hide-metabox' );
 					}
+					// If Changed
+					$( '#flexia_post_header_meta' ).on( 'change', function() {
+						headerMetaStatus = $( '#flexia_post_header_meta' ).val();
+						if( headerMetaStatus == 'yes' ) {
+							target.removeClass( 'flexia-hide-metabox' ).addClass( 'flexia-show-metabox' );
+						}else {
+							target.removeClass( 'flexia-show-metabox' ).addClass( 'flexia-hide-metabox' );
+						}
+					});
 				});
-			</script> -->
+			</script>
 			<?php
 		}
 

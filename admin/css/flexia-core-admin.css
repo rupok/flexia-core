@@ -246,9 +246,14 @@
 .flexia-core-metabox-wrapper .flexia-core-metabox-row .flexia-core-metabox-right {
 	flex-basis: 75%;
 }
-.hide-metabox {
-	display: none;
+.flexia-hide-metabox {
+	display: none !important;
+	background-color: rgba( 0,0,0,0.45 );
+	transition: all 0.3s ease-in-out;
 }
-.show-metabox {
-	display: block;
+.flexia-show-metabox {
+	display: flex !important;
+	/*background-color: rgba( 255,255,255,1 );*/
+	background-color: #f7f7f7;
+	transition: all 0.3s ease-in-out;
 }
