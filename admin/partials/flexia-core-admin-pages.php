@@ -32,7 +32,7 @@ class Flexia_Core_Admin_Pages {
 			'manage_options',
 			'flexia-settings',
 			array( $this, 'flexia_core_admin_home_page' ),
-			plugins_url( 'img/flexia-icon.png', dirname(__FILE__) ),
+			plugins_url( 'img/flexia-logo-white.svg', dirname(__FILE__) ),
 			199
 		);
 
@@ -48,7 +48,7 @@ class Flexia_Core_Admin_Pages {
 		?>
 		<div class="flexia-core-admin-wrapper">
 			<div class="flexia-core-admin-header">
-			<?php echo '<img class="flexia-logo-inline" src="' . plugins_url( 'img/flexia-logo.png', dirname(__FILE__) ) . '" > '; ?>
+			<?php echo '<img class="flexia-logo-inline" src="' . plugins_url( 'img/flexia-logo.svg', dirname(__FILE__) ) . '" > '; ?>
 				<h2 class="title">Flexia Settings</h2>
 			</div>
 			<div class="flexia-core-content">
@@ -107,7 +107,7 @@ class Flexia_Core_Admin_Pages {
 		?>
 		<div class="flexia-core-admin-wrapper">
 			<div class="flexia-core-admin-header">
-				<?php echo '<img class="flexia-logo-inline" src="' . plugins_url( 'img/flexia-logo.png', dirname(__FILE__) ) . '" > '; ?>
+				<?php echo '<img class="flexia-logo-inline" src="' . plugins_url( 'img/flexia-logo.svg', dirname(__FILE__) ) . '" > '; ?>
 				<h2 class="title">Recommended Plugins</h2>
 				<p>If you want extra functionality, you can add the below plugins. None of these plugins are required for the theme to work, they simply add additional functionality.</p>
 			</div>

@@ -1,7 +1,10 @@
 /**
  * Admin styles
  */
-
+#adminmenu .toplevel_page_flexia-settings img {
+	width: 18px;
+	margin-top: -1px;
+}
 .flexia-core-admin-wrapper {
 	position: relative;
 	display: flex;
@@ -24,6 +27,7 @@
 .flexia-logo-inline {
 	width: 36px;
 	padding-right: 10px;
+	padding-top: 3px;
 }
 .flexia-core-admin-wrapper .flexia-core-admin-header p {
 	border-left: 1px solid rgba(0,0,0, .5);

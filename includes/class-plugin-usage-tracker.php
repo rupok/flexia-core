@@ -626,7 +626,7 @@ if( ! class_exists( 'Flexia_Core_Plugin_Usage_Tracker') ) {
 				
 				<div class="notice notice-info updated put-dismiss-notice flexia-usage-notice">
 					<div class="flexia-usage-notice-img">
-						<?php echo '<img class="flexia-logo-inline" src="' . plugins_url( 'admin/img/flexia-logo.png', dirname(__FILE__) ) . '" > '; ?>
+						<?php echo '<img class="flexia-logo-inline" src="' . plugins_url( 'admin/img/flexia-logo.svg', dirname(__FILE__) ) . '" > '; ?>
 					</div>
 					<div class="flexia-usage-notice-content">
 						<p><?php echo __( $notice_text ); ?></p>
