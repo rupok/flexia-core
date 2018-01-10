@@ -57,8 +57,20 @@ class Flexia_Core_Admin_Pages {
 					<div class="flexia-core-admin-block-large">
 						<?php echo '<img class="flexia-preview-img" src="' . plugins_url( 'img/flexia-preview.png', dirname(__FILE__) ) . '" > '; ?>
 					</div>
-					<div class="flexia-core-admin-block-wrapper flexia-core-admin-block-review">
-						<div class="flexia-core-admin-block">
+					<div class="flexia-core-admin-block-wrapper">
+						<div class="flexia-core-admin-block flexia-core-admin-block-customize">
+							<header class="flexia-core-admin-block-header">
+								<div class="flexia-core-admin-block-header-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 45.91"><defs><style>.flexia-icon-customize{fill:#e74c3c;}</style></defs><title>Customization</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="flexia-icon-customize" d="M23,15.6q11.21,0,22.42,0c.44,0,.56.13.56.56q0,13.75,0,27.5a2,2,0,0,1-2.26,2.25H2.31A2,2,0,0,1,0,43.61Q0,29.91,0,16.2c0-.6,0-.6.59-.6ZM19.08,37.22c.48.2.91.41,1.36.54a.58.58,0,0,1,.49.58A1.9,1.9,0,0,0,22.64,40a1.77,1.77,0,0,0,2-1.25c.13-.86.64-1.09,1.29-1.31a1.18,1.18,0,0,0,.29-.14.55.55,0,0,1,.76.06,1.81,1.81,0,0,0,2.29,0,1.69,1.69,0,0,0,.66-2.17,1.66,1.66,0,0,1,0-2,.28.28,0,0,0,0-.08c.07-.47.31-.66.81-.72a1.88,1.88,0,0,0,1.62-1.73,1.72,1.72,0,0,0-1.27-1.84c-.83-.11-1.06-.6-1.26-1.22a1.26,1.26,0,0,0-.15-.33.58.58,0,0,1,.08-.8,1.79,1.79,0,0,0,0-2.25,1.72,1.72,0,0,0-2.22-.65,1.57,1.57,0,0,1-1.87,0,1.19,1.19,0,0,0-.39-.13c-.31-.05-.4-.22-.43-.53a1.92,1.92,0,0,0-1.69-1.72,1.77,1.77,0,0,0-2,1.27c-.12.83-.61,1-1.23,1.26a1.2,1.2,0,0,0-.29.14.63.63,0,0,1-.88-.06,1.8,1.8,0,0,0-2.25,0,1.71,1.71,0,0,0-.63,2.18,1.57,1.57,0,0,1,0,1.84,1,1,0,0,0-.1.3c-.05.32-.21.43-.55.46a1.91,1.91,0,0,0-1.7,1.65,1.76,1.76,0,0,0,1.24,2,1.57,1.57,0,0,1,1.31,1.29,1.14,1.14,0,0,0,.14.29.56.56,0,0,1-.06.76,1.83,1.83,0,0,0,.23,2.56A1.94,1.94,0,0,0,19.08,37.22Z"/><path class="flexia-icon-customize" d="M22.94,11.8H.61c-.61,0-.61,0-.61-.63Q0,6.73,0,2.29A2,2,0,0,1,2.31,0H43.59a2,2,0,0,1,2.3,2.3c0,3,0,6,0,9,0,.42-.12.54-.54.54ZM17.79,3.91a1.94,1.94,0,0,0-.07,3.89,2,2,0,0,0,2-1.92A2,2,0,0,0,17.79,3.91ZM6.46,5.81a1.94,1.94,0,1,0,2-1.9A1.94,1.94,0,0,0,6.46,5.81Z"/><path class="flexia-icon-customize" d="M22.95,27a3.7,3.7,0,1,1-3.71,3.73A3.7,3.7,0,0,1,22.95,27Z"/></g></g><head xmlns=""/></svg>
+								</div>	
+								<h4 class="flexia-core-admin-title">Customize Flexia</h4>
+							</header>
+							<div class="flexia-core-admin-block-content">
+								<p>Flexia got lots of customization options to achieve almost anything you want. Take a minute to explore the power of Flexia.</p>
+								<a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="customize-flexia button button-primary" target="_blank">Customize Flexia</a>
+							</div>
+						</div>
+						<div class="flexia-core-admin-block flexia-core-admin-block-review">
 							<header class="flexia-core-admin-block-header">
 								<div class="flexia-core-admin-block-header-icon">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 41.82"><defs><style>.flexia-icon-review{fill:#00aeff;}</style></defs><title>Like</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="thumb-up"><path class="flexia-icon-review" d="M0,41.82H8.36V16.73H0Zm46-23a4.19,4.19,0,0,0-4.18-4.18H28.65L30.74,5V4.39a4.39,4.39,0,0,0-.84-2.3L27.6,0,13.8,13.8a3.51,3.51,0,0,0-1.25,2.93V37.64a4.19,4.19,0,0,0,4.18,4.18H35.55a4.13,4.13,0,0,0,3.76-2.51l6.27-14.85A3.56,3.56,0,0,0,45.79,23V18.82H46Z"/></g></g></g><head xmlns=""/></svg>
