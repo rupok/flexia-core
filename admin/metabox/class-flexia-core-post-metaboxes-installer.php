@@ -176,7 +176,7 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				            <option value="simple" <?php selected( $page_title, 'simple' ); ?>>Simple Header</option>
 				            <option value="none" <?php selected( $page_title, 'none' ); ?>>No Header</option>
 				        </select>
-				        <p class="description">Show or hide the page title.</p>
+				        <p class="description">Set individual layout for this post.</p>
 					</div>
 				</div>
 
