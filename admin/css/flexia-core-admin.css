@@ -335,3 +335,13 @@
 	background-color: #f7f7f7;
 	transition: all 0.3s ease-in-out;
 }
+.flexia-advance-fields {
+	background-color: #f7f7f7;
+}
+#flexia-post-advance-view {
+	text-decoration: none;
+	outline: none;
+}
+.hide-adv {
+	display: none;
+}

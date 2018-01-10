@@ -190,11 +190,12 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				            <option value="no" <?php selected( $header_meta, 'no' ); ?>>No</option>
 				        </select>
 				        <p class="description">Show or hide the header meta (post date, post category, post comments).</p>
+				        <a href="#" id="flexia-post-advance-view">Show Advanced Settings</a>
 					</div>
 				</div>
 
 				<!-- Show/Hide Post Author Meta ( if post header meta is active ) -->
-				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-hide-metabox">
+				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-advance-fields flexia-hide-metabox">
 					<div class="flexia-core-metabox-left">
 						<label for="flexia_post_header_author_meta"><?php _e( 'Show Post Author: ', 'flexia-core' ); ?></label>
 					</div>
@@ -208,7 +209,7 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				</div>
 
 				<!-- Show/Hide Post Date ( if post header meta is active ) -->
-				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-hide-metabox">
+				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-advance-fields flexia-hide-metabox">
 					<div class="flexia-core-metabox-left">
 						<label for="flexia_post_header_post_date"><?php _e( 'Show Post Date: ', 'flexia-core' ); ?></label>
 					</div>
@@ -222,7 +223,7 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				</div>
 
 				<!-- Show/Hide Post Category ( if post header meta is active ) -->
-				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-hide-metabox">
+				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-advance-fields flexia-hide-metabox">
 					<div class="flexia-core-metabox-left">
 						<label for="flexia_post_header_post_category"><?php _e( 'Show Post Category: ', 'flexia-core' ); ?></label>
 					</div>
@@ -236,7 +237,7 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				</div>
 
 				<!-- Show/Hide Post Comments ( if post header meta is active ) -->
-				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-hide-metabox">
+				<div class="flexia-core-metabox-row js-flexia-core-alter flexia-advance-fields flexia-hide-metabox">
 					<div class="flexia-core-metabox-left">
 						<label for="flexia_post_header_post_comments"><?php _e( 'Show Post Comments Count: ', 'flexia-core' ); ?></label>
 					</div>
@@ -295,21 +296,30 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 			<script>
 				jQuery(document).ready(function($){
 					var headerMetaStatus = $( '#flexia_post_header_meta' ).val();
+					var advanceView = $( '#flexia-post-advance-view' );
 					var target = $( '.js-flexia-core-alter' );
 					// Default
 					if( headerMetaStatus == 'yes' ) {
-						target.removeClass( 'flexia-hide-metabox' ).addClass( 'flexia-show-metabox' );
+						advanceView.removeClass( 'hide-adv' );
 					}else {
-						target.removeClass( 'flexia-show-metabox' ).addClass( 'flexia-hide-metabox' );
+						advanceView.addClass( 'hide-adv' );
 					}
 					// If Changed
 					$( '#flexia_post_header_meta' ).on( 'change', function() {
-						headerMetaStatus = $( '#flexia_post_header_meta' ).val();
+						var headerMetaStatus = $( '#flexia_post_header_meta' ).val();
+						var target = $( '.js-flexia-core-alter' );
+						var advanceView = $( '#flexia-post-advance-view' );
 						if( headerMetaStatus == 'yes' ) {
-							target.removeClass( 'flexia-hide-metabox' ).addClass( 'flexia-show-metabox' );
+							advanceView.removeClass( 'hide-adv' );
 						}else {
 							target.removeClass( 'flexia-show-metabox' ).addClass( 'flexia-hide-metabox' );
+							advanceView.addClass( 'hide-adv' );
 						}
+					});
+					// If clicked on Advance View
+					advanceView.on( 'click', function(e) {
+						e.preventDefault();
+						target.toggleClass( 'flexia-hide-metabox' );
 					});
 				});
 			</script>
