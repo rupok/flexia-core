@@ -167,10 +167,11 @@ if( ! class_exists( 'Flexia_Core_Post_Metabox' ) ) {
 				<!-- Show/Hide Post Title -->
 				<div class="flexia-core-metabox-row">
 					<div class="flexia-core-metabox-left">
-						<label for="flexia_hide_post_title"><?php _e( 'Post Title: ', 'flexia-core' ); ?></label>
+						<label for="flexia_hide_post_title"><?php _e( 'Post Layout: ', 'flexia-core' ); ?></label>
 					</div>
 					<div class="flexia-core-metabox-right">
 				        <select name="flexia_hide_post_title" id="flexia_hide_post_title" class="regular-text">
+				            <option value="default" <?php selected( $page_title, 'default' ); ?>>Default (from Customizer)</option>
 				            <option value="large" <?php selected( $page_title, 'large' ); ?>>Large Header (Featured Image Background)</option>
 				            <option value="simple" <?php selected( $page_title, 'simple' ); ?>>Simple Header</option>
 				            <option value="none" <?php selected( $page_title, 'none' ); ?>>No Header</option>
