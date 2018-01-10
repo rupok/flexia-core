@@ -48,7 +48,7 @@ class Flexia_Core_Admin_Pages {
 		?>
 		<div class="flexia-core-admin-wrapper">
 			<div class="flexia-core-admin-header">
-				<div class="flexia-logo-inline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.27 88.23"><defs><style>.flexia-logo-inline{fill:#ee3560;}</style></defs><title>Flexia Logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="flexia-logo-inline" d="M70.55,14.31,44.24,1.41a13.82,13.82,0,0,0-13.79.94L6.12,18.68A13.82,13.82,0,0,0,0,31.1L2,60.33A13.82,13.82,0,0,0,9.72,71.81L43.2,88.23l.07,0L14.74,45.69a9.66,9.66,0,0,1,2.64-13.41L37.32,18.9a6.69,6.69,0,0,1,10.37,4.67h0A6.69,6.69,0,0,1,44.78,30L28.28,41.09l6.3,9.38.27.41L42.31,62,43,63,54.73,80.48l19.42-13A13.82,13.82,0,0,0,80.24,55l-2-29.24A13.82,13.82,0,0,0,70.55,14.31Zm-19,41.48-5.46,3.66L38.63,48.34l5.46-3.66a6.69,6.69,0,0,1,10.37,4.67h0A6.69,6.69,0,0,1,51.55,55.79Z"/></g></g></svg>
+				<div class="flexia-logo-inline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.27 88.23"><defs><style>.flexia-logo-inline{fill:#4d4d4f;}</style></defs><title>Flexia Logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="flexia-logo-inline" d="M70.55,14.31,44.24,1.41a13.82,13.82,0,0,0-13.79.94L6.12,18.68A13.82,13.82,0,0,0,0,31.1L2,60.33A13.82,13.82,0,0,0,9.72,71.81L43.2,88.23l.07,0L14.74,45.69a9.66,9.66,0,0,1,2.64-13.41L37.32,18.9a6.69,6.69,0,0,1,10.37,4.67h0A6.69,6.69,0,0,1,44.78,30L28.28,41.09l6.3,9.38.27.41L42.31,62,43,63,54.73,80.48l19.42-13A13.82,13.82,0,0,0,80.24,55l-2-29.24A13.82,13.82,0,0,0,70.55,14.31Zm-19,41.48-5.46,3.66L38.63,48.34l5.46-3.66a6.69,6.69,0,0,1,10.37,4.67h0A6.69,6.69,0,0,1,51.55,55.79Z"/></g></g></svg>
 				</div>
 				<h2 class="title">Flexia Settings</h2>
 			</div>
@@ -150,12 +150,12 @@ class Flexia_Core_Admin_Pages {
 
 
 		?>
-		<div class="flexia-core-admin-wrapper">
+		<div class="flexia-core-admin-wrapper flexia-rec-plugins">
 			<div class="flexia-core-admin-header">
-				<div class="flexia-logo-inline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.27 88.23"><defs><style>.cls-1{fill:#ee3560;}</style></defs><title>Flexia Logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M70.55,14.31,44.24,1.41a13.82,13.82,0,0,0-13.79.94L6.12,18.68A13.82,13.82,0,0,0,0,31.1L2,60.33A13.82,13.82,0,0,0,9.72,71.81L43.2,88.23l.07,0L14.74,45.69a9.66,9.66,0,0,1,2.64-13.41L37.32,18.9a6.69,6.69,0,0,1,10.37,4.67h0A6.69,6.69,0,0,1,44.78,30L28.28,41.09l6.3,9.38.27.41L42.31,62,43,63,54.73,80.48l19.42-13A13.82,13.82,0,0,0,80.24,55l-2-29.24A13.82,13.82,0,0,0,70.55,14.31Zm-19,41.48-5.46,3.66L38.63,48.34l5.46-3.66a6.69,6.69,0,0,1,10.37,4.67h0A6.69,6.69,0,0,1,51.55,55.79Z"/></g></g></svg>
+				<div class="flexia-logo-inline"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.27 88.23"><defs><style>.cls-1{fill:#4d4d4f;}</style></defs><title>Flexia Logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M70.55,14.31,44.24,1.41a13.82,13.82,0,0,0-13.79.94L6.12,18.68A13.82,13.82,0,0,0,0,31.1L2,60.33A13.82,13.82,0,0,0,9.72,71.81L43.2,88.23l.07,0L14.74,45.69a9.66,9.66,0,0,1,2.64-13.41L37.32,18.9a6.69,6.69,0,0,1,10.37,4.67h0A6.69,6.69,0,0,1,44.78,30L28.28,41.09l6.3,9.38.27.41L42.31,62,43,63,54.73,80.48l19.42-13A13.82,13.82,0,0,0,80.24,55l-2-29.24A13.82,13.82,0,0,0,70.55,14.31Zm-19,41.48-5.46,3.66L38.63,48.34l5.46-3.66a6.69,6.69,0,0,1,10.37,4.67h0A6.69,6.69,0,0,1,51.55,55.79Z"/></g></g></svg>
 				</div>
-				<h2 class="title">Recommended Plugins</h2>
-				<p>If you want extra functionality, you can add the below plugins. None of these plugins are required for the theme to work, they simply add additional functionality.</p>
+				<h2 class="title flexia-rec-plugins-title">Recommended Plugins</h2>
+				<p class="flexia-rec-plugins-sub">If you want extra functionality, you can add the below plugins. None of these plugins are required for the theme to work, they simply add additional functionality.</p>
 			</div>
 			<div class="flexia-plugins-wrapper">
 				<?php
