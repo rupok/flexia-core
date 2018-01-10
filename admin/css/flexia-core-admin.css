@@ -105,6 +105,9 @@
 	display: block;
 	margin: 0 auto;
 }
+.flexia-core-admin-block-review .flexia-core-admin-block-header-icon svg {
+	width: 100%;
+}
 .flexia-core-admin-block-support .flexia-core-admin-block-header-icon {
 	width: 30px;
 }
