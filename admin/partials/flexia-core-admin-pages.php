@@ -160,8 +160,14 @@ class Flexia_Core_Admin_Pages {
 			<div class="flexia-plugins-wrapper">
 				<?php
 					if( class_exists( 'Flexia_Core_Plugin_Installer' ) ) {
-						$this->fc->free_plugins();
-						$this->fc->premium_plugins();
+						
+						if(!$sock = @fsockopen('www.wordpress.org', 80)) {
+						    $this->fc->premium_plugins();
+						}else
+						{
+							$this->fc->free_plugins();
+							$this->fc->premium_plugins();
+						}
 					}
 				?>
 			</div>

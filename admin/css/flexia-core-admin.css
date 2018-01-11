@@ -143,6 +143,7 @@
 .flexia-plugins-wrapper {
 	display: flex;
 	flex-flow: row wrap;
+	margin: -10px;
 }
 .flexia-preview-img {
 	width: 100%;
@@ -161,20 +162,16 @@
 	margin: 10px auto;
 }
 .flexia-plugins {
-	max-width: calc( 25% - 10px );
-	min-width: 260px;
+	max-width: calc( 25% - 20px );
+	min-width: 350px;
 	flex: 1 1 auto;
 	background: #fff;
 	border: 1px solid rgba( 0,0,0,0.1 );
-	margin-right: 10px;
+	margin: 10px;
 	margin-bottom: 25px;
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: space-between;
-}
-.flexia-plugins:last-child,
-.flexia-plugins:nth-child(4n) {
-	margin-right: 0px;
 }
 .flexia-plugins .header {
 	width: 100%;
