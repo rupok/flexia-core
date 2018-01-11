@@ -162,7 +162,7 @@
 	margin: 10px auto;
 }
 .flexia-plugins {
-	max-width: calc( 25% - 20px );
+	max-width: calc( 25% - 22px );
 	min-width: 350px;
 	flex: 1 1 auto;
 	background: #fff;
