@@ -105,7 +105,11 @@ class Flexia_Core_Plugin_Installer {
 
 	    	$slug_name = $plugin['slug'];
 	    	$file_name = $plugin['file'];
-	    	self::render_template( $plugin, $api, $slug_name, $file_name, $btn_class, $btn_text );
+	    	if( is_array( $api ) && !empty( $api ) ) {
+	    		self::render_template( $plugin, $api, $slug_name, $file_name, $btn_class, $btn_text );
+	    	}else {
+	    		return false;
+	    	}
     	}
     }
 
@@ -233,7 +237,7 @@ class Flexia_Core_Plugin_Installer {
     }
 
     /**
-     * This method will render plugin block
+     * This method will render recomended plugin block
 	 *
 	 * @since   1.0.0
      */
