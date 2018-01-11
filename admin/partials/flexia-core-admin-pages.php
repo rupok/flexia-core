@@ -160,8 +160,8 @@ class Flexia_Core_Admin_Pages {
 			<div class="flexia-plugins-wrapper">
 				<?php
 					if( class_exists( 'Flexia_Core_Plugin_Installer' ) ) {
-						echo $this->fc->free_plugins();
-						echo $this->fc->premium_plugins();
+						$this->fc->free_plugins();
+						$this->fc->premium_plugins();
 					}
 				?>
 			</div>
