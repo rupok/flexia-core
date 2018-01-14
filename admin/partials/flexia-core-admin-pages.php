@@ -55,7 +55,7 @@ class Flexia_Core_Admin_Pages {
 			<div class="flexia-core-content">
 				<div class="flexia-core-content-inner">
 					<div class="flexia-core-admin-block-large">
-						<?php echo '<img class="flexia-preview-img" src="' . plugins_url( 'img/flexia-preview.png', dirname(__FILE__) ) . '" > '; ?>
+						<?php echo '<img class="flexia-preview-img" src="' . plugins_url( 'img/flexia-banner.png', dirname(__FILE__) ) . '" > '; ?>
 					</div>
 					<div class="flexia-core-admin-block-wrapper">
 						<div class="flexia-core-admin-block flexia-core-admin-block-customize">
