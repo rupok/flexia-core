@@ -4,7 +4,7 @@ Contributors: re_enter_rupok, codetic
 Tags: flexia, shortcodes, bootstrap-4, metabox, customizer, widgets
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,6 +52,7 @@ Go to **Customize > Custom JavaScripts** to add your scripts.
 * Show/Hide Post Meta
 * Show/Hide Post Navigation
 * Show/Hide Post Social Sharing
+* And lots more control for individual posts
 
 ## Shortcodes
 
@@ -122,6 +123,11 @@ It's a specialized plugin for Flexia theme, you need to install Flexia to get mo
 
 
 == Changelog ==
+
+= 1.2.1 =
+* Post Settings improved with lot more options
+* Important information added to options panel
+* Few minor bugfix and improvements
 
 = 1.2.0 =
 * Page Settings added
