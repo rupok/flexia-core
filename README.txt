@@ -4,7 +4,7 @@ Contributors: re_enter_rupok, codetic
 Tags: flexia, shortcodes, bootstrap-4, metabox, customizer, widgets
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -123,6 +123,9 @@ It's a specialized plugin for Flexia theme, you need to install Flexia to get mo
 
 
 == Changelog ==
+
+= 1.2.2 =
+* Custom JavaScripts backward compatibility added for WordPress < 4.9
 
 = 1.2.1 =
 * Post Settings improved with lot more options
