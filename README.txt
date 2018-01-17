@@ -4,7 +4,7 @@ Contributors: re_enter_rupok, codetic
 Tags: flexia, shortcodes, bootstrap-4, metabox, customizer, widgets
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -32,6 +32,7 @@ The plan is to keep all the plugin territory functionality of Flexia within this
 * **Custom JavaScripts**
   * Header Script
   * Footer Script
+  * Google Analytics
 
 You can add custom JavaScripts to your site header and footer through Customizer and edit your scripts with CodeMirror editor. You can place any custom JavaScript, Google Analytics, Facebook Pixel or any kind of embed script. Extremely helpful if you need to place any custom javascript or jQuery code to header or footer. This plugin gives you the ability to place different scripts to header or footer separately. Uses Customizer so you can edit the code live and see the changes on the fly.
 
@@ -123,6 +124,10 @@ It's a specialized plugin for Flexia theme, you need to install Flexia to get mo
 
 
 == Changelog ==
+
+= 1.2.3 =
+* Google Analytics option added to Customizer
+* Few bugfix and improvements
 
 = 1.2.2 =
 * Custom JavaScripts backward compatibility added for WordPress < 4.9
