@@ -1,7 +1,7 @@
 === Flexia Core ===
 
 Contributors: re_enter_rupok, codetic
-Tags: flexia, shortcodes, bootstrap-4, metabox, customizer, widgets
+Tags: flexia, shortcodes, bootstrap-4, metabox, customizer, widgets, google-analytics, code
 Requires at least: 4.0
 Tested up to: 4.9.1
 Stable tag: 1.2.3
