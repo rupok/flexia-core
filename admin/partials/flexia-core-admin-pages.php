@@ -56,13 +56,12 @@ class Flexia_Core_Admin_Pages {
 				<div class="flexia-core-content-inner">
 					<div class="flexia-core-admin-block-large">
 						<?php echo '<img class="flexia-preview-img" src="' . plugins_url( 'img/flexia-banner.png', dirname(__FILE__) ) . '" > '; ?>
-					</div>
 					<?php
-					/**
-					 * Flexia Core Admin Hook: After Admin Banner
-					 */
-					do_action( 'flexia_core_after_admin_banner' );
+					
+					do_action( 'flexia_pro_license_activation' );
 					?>
+					</div>
+
 					<div class="flexia-core-admin-block-wrapper">
 						<div class="flexia-core-admin-block flexia-core-admin-block-customize">
 							<header class="flexia-core-admin-block-header">
