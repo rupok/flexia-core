@@ -156,6 +156,9 @@
 	display: block;
 	margin: 0 auto;
 }
+.flexia-core-sidebar-block .flexia-admin-sidebar-logo.flexia-pro-logo{
+	max-width: 120px;
+}
 .flexia-core-sidebar-block .flexia-admin-sidebar-logo-text > img {
 	max-width: 200px;
 	display: block;
