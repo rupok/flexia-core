@@ -40,7 +40,7 @@ if( ! class_exists( 'Flexia_Core_Global_Metabox' ) ) {
 		 */
 		public function flexia_core_add_metabox() {
 
-			$screens = $this->flexia_core_get_post_types();
+			$screens = ['page'];
 			foreach( $screens as $screen ) {
 				add_meta_box(
 					'flexia_core_page_settings',

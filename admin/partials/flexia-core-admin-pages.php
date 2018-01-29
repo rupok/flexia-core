@@ -57,7 +57,7 @@ class Flexia_Core_Admin_Pages {
 					<div class="flexia-core-admin-block-large">
 						<?php echo '<img class="flexia-preview-img" src="' . plugins_url( 'img/flexia-banner.png', dirname(__FILE__) ) . '" > '; ?>
 					<?php
-					
+
 					do_action( 'flexia_pro_license_activation' );
 					?>
 					</div>
