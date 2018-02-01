@@ -1,8 +1,8 @@
 <?php
 /**
- * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
+ * This function will create custom metaboxes into post page.
  */
-function flexia_core_register_demo_metabox() {
+function flexia_core_register_post_metaboxs() {
     $prefix = '_flexia_post_meta_key_';
 
     /**
@@ -161,7 +161,7 @@ function flexia_core_register_demo_metabox() {
 	) );
 
 }
-add_action('cmb2_admin_init', 'flexia_core_register_demo_metabox' );
+add_action( 'cmb2_admin_init', 'flexia_core_register_post_metaboxs' );
 
 /**
  * Show specific fields if header_meta is set to "yes"

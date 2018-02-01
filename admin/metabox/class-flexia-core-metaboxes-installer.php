@@ -1,123 +1,42 @@
 <?php
 /**
- *
+ * This function will generate custom metaboxes into the pages
  */
-if( ! class_exists( 'Flexia_Core_Global_Metabox' ) ) {
+function flexia_core_register_page_metaboxs() {
+    $prefix = '_flexia_meta_key_';
 
+    /**
+     * Flexia Post Metaboxes
+     */
+    $cmb_post = new_cmb2_box(array(
+        'id' 			=> $prefix . 'metaboxs',
+        'title' 		=> esc_html__('Flexia Pages Settings', 'flexia_core'),
+        'object_types' 	=> array( 'page' ), // Post type
+        'priority' 		=> 'high',
+    ));
+    /**
+     * Additional Body Class
+     */
+    $cmb_post->add_field(array(
+        'name' 			=> esc_html__('Additional Body Class', 'flexia_core'),
+        'desc' 			=> esc_html__('Add an extra class to body for this post.', 'flexia_core'),
+        'id' 			=> $prefix . 'body_class',
+        'type' 			=> 'text',
+    ));
 	/**
-	 * Flexia Core Metabox Installer
-	 *
-	 * @since  1.2.0
-	 */
-	class Flexia_Core_Global_Metabox {
-
-		public function __construct() {
-
-			add_action( 'add_meta_boxes', array( $this, 'flexia_core_add_metabox' ) );
-			add_action( 'save_post', array( $this, 'flexia_core_save_metabox_value' ) );
-
-		}
-
-		/**
-		 * This method will get all post types available ( exclude 'post' )
-		 *
-		 * @since   1.2.0
-		 */
-		public function flexia_core_get_post_types() {
-			$post_types = get_post_types( '', 'names' );
-			foreach( $post_types as $post_type ) {
-				$all_post_types[] = $post_type;
-			}
-			$delete_key = array_search( 'post', $all_post_types );
-			unset( $all_post_types[$delete_key] );
-			return $all_post_types;
-		}
-
-		/**
-		 * This method will create metaboxes
-		 *
-		 * @since   1.2.0
-		 */
-		public function flexia_core_add_metabox() {
-
-			$screens = ['page'];
-			foreach( $screens as $screen ) {
-				add_meta_box(
-					'flexia_core_page_settings',
-					'Flexia Page Settings',
-					array( $this, 'flexia_core_metabox_html' ),
-					$screen,
-					'normal',
-					'high'
-				);
-			}
-
-		}
-
-		/**
-		 * This method will save metabox's data
-		 *
-		 * @since   1.2.0
-		 */
-		public function flexia_core_save_metabox_value( $post_id ) {
-
-			if( array_key_exists( 'flexia_hide_page_title', $_POST ) ) {
-				update_post_meta(
-					$post_id,
-					'_flexia_meta_key_page_title',
-					$_POST['flexia_hide_page_title']
-				);
-			}
-
-			if( array_key_exists( 'flexia_add_body_class', $_POST ) ) {
-				update_post_meta(
-					$post_id,
-					'_flexia_meta_key_body_class',
-					$_POST['flexia_add_body_class']
-				);
-			}
-
-		}
-
-		/**
-		 * This method will generate metabox markup
-		 *
-		 * @since   1.2.0
-		 */
-		public function flexia_core_metabox_html( $post ) {
-
-			$page_title = get_post_meta( $post->ID, '_flexia_meta_key_page_title', true );
-			$body_class = get_post_meta( $post->ID, '_flexia_meta_key_body_class', true );
-			?>
-			<div class="flexia-core-metabox-wrapper">
-				<div class="flexia-core-metabox-row">
-					<div class="flexia-core-metabox-left">
-						<label for="flexia_add_body_class"><?php _e( 'Additional Body Class: ', 'flexia-core' ); ?></label>
-					</div>
-					<div class="flexia-core-metabox-right">
-						<input type="text" name="flexia_add_body_class" class="regular-text" value="<?php echo $body_class; ?>">
-						<p class="description">Add an extra class to body for this page.</p>
-					</div>
-				</div>
-				<div class="flexia-core-metabox-row">
-					<div class="flexia-core-metabox-left">
-						<label for="flexia_hide_page_title"><?php _e( 'Page Title: ', 'flexia-core' ); ?></label>
-					</div>
-					<div class="flexia-core-metabox-right">
-				        <select name="flexia_hide_page_title" id="flexia_show_page_title" class="regular-text">
-				            <option value="1" <?php selected( $page_title, '1' ); ?>>Show</option>
-				            <option value="0" <?php selected( $page_title, '0' ); ?>>Hide</option>
-				        </select>
-				        <p class="description">Show or hide the page title.</p>
-					</div>
-				</div>
-			</div>
-			<?php
-		}
-
-
-	}
-
-	$flexia_metaboxes = new Flexia_Core_Global_Metabox();
+     * Show Page Title
+     */
+    $cmb_post->add_field( array(
+		'name'             => esc_html__( 'Show Page Title', 'flexia_core' ),
+		'desc'             => esc_html__( 'Show or hide the page title.', 'flexia_core' ),
+		'id'               => $prefix . 'page_title',
+		'type'             => 'select',
+		'show_option_none' => false,
+		'options'          => array(
+			'1' 	=> esc_html__( 'Yes', 'flexia_core' ),
+			'0'   	=> esc_html__( 'No', 'flexia_core' ),
+		),
+	) );
 
 }
+add_action( 'cmb2_admin_init', 'flexia_core_register_page_metaboxs' );
