@@ -357,19 +357,20 @@
 .flexia-core-metabox-wrapper .flexia-core-metabox-row .flexia-core-metabox-right {
 	flex-basis: 75%;
 }
+/**
+ * Altering Metabox fields
+ */
+.js-flexia-core-alter {
+	background-color: #f7f7f7;
+	text-indent: 50px;
+}
 .flexia-hide-metabox {
 	display: none !important;
 	background-color: rgba( 0,0,0,0.45 );
 	transition: all 0.3s ease-in-out;
 }
 .flexia-show-metabox {
-	display: flex !important;
-	/*background-color: rgba( 255,255,255,1 );*/
-	background-color: #f7f7f7;
 	transition: all 0.3s ease-in-out;
-}
-.flexia-advance-fields {
-	background-color: #f7f7f7;
 }
 #flexia-post-advance-view {
 	text-decoration: none;

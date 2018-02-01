@@ -133,6 +133,12 @@ class Flexia_Core {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-flexia-core-plugin-installer.php';
 
 		/**
+		 * Requiring CMB2
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cmb2/init.php';
+		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cmb2/example-functions.php';
+
+		/**
 		 * Requiring flexia metaboxes
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/metabox/class-flexia-core-metaboxes-installer.php';
