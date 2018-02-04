@@ -39,4 +39,11 @@ function flexia_core_register_page_metaboxs() {
 	) );
 
 }
+// global $post;
+// if( !empty( $post ) ) {
+//     $page_template = get_post_meta( $post->ID, '_wp_page_template', true );
+//     if( $page_template != 'page-templates/template-portfolio.php' ) {
+//         add_action( 'cmb2_admin_init', 'flexia_core_register_page_metaboxs' );
+//     }
+// }
 add_action( 'cmb2_admin_init', 'flexia_core_register_page_metaboxs' );

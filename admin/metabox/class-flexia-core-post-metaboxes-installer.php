@@ -167,7 +167,7 @@ add_action( 'cmb2_admin_init', 'flexia_core_register_post_metaboxs' );
  * Show specific fields if header_meta is set to "yes"
  */
 function show_if_header_meta_active( $cmb_post ) {
-	$status = get_post_meta( $cmb_post->object_id(), '_flexia_post_meta_key_header_meta', 1 );
+	$status = get_post_meta( $cmb_post->object_id(), '_flexia_post_meta_key_header_meta', true );
 	// Only show if status is 'external'
 	return 'yes' === $status;
 }
