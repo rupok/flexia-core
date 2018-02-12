@@ -47,6 +47,9 @@ class Flexia_Core_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		add_filter( 'body_class', function( $classes ) {
+	    	return array_merge( $classes, array('flexia-core-'.$this->version ) );
+		} );
 
 	}
 
