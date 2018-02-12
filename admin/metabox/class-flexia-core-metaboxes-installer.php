@@ -27,23 +27,17 @@ function flexia_core_register_page_metaboxs() {
      * Show Page Title
      */
     $cmb_post->add_field( array(
-		'name'             => esc_html__( 'Show Page Title', 'flexia_core' ),
-		'desc'             => esc_html__( 'Show or hide the page title.', 'flexia_core' ),
-		'id'               => $prefix . 'page_title',
+		'name'             => esc_html__( 'Page Header', 'flexia_core' ),
+		'desc'             => esc_html__( 'Choose page header.', 'flexia_core' ),
+		'id'               => $prefix . 'page_header',
 		'type'             => 'select',
 		'show_option_none' => false,
 		'options'          => array(
-			'1' 	=> esc_html__( 'Yes', 'flexia_core' ),
-			'0'   	=> esc_html__( 'No', 'flexia_core' ),
+			'flexia_page_header_default' 	=> esc_html__( 'Default Header ( From Customizer )', 'flexia_core' ),
+            'flexia_page_header_large'      => esc_html__( 'Large Header', 'flexia_core' ),
+			'flexia_page_header_mini'       => esc_html__( 'Mini Header', 'flexia_core' ),
 		),
 	) );
 
 }
-// global $post;
-// if( !empty( $post ) ) {
-//     $page_template = get_post_meta( $post->ID, '_wp_page_template', true );
-//     if( $page_template != 'page-templates/template-portfolio.php' ) {
-//         add_action( 'cmb2_admin_init', 'flexia_core_register_page_metaboxs' );
-//     }
-// }
 add_action( 'cmb2_admin_init', 'flexia_core_register_page_metaboxs' );
