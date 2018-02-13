@@ -3,8 +3,8 @@
 Contributors: re_enter_rupok, codetic
 Tags: flexia, shortcodes, bootstrap-4, metabox, customizer, widgets, Google Analytics, Facebook Pixel
 Requires at least: 4.0
-Tested up to: 4.9.1
-Stable tag: 1.2.3
+Tested up to: 4.9.4
+Stable tag: 1.3.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -124,6 +124,12 @@ It's a specialized plugin for Flexia theme, you need to install Flexia to get mo
 
 
 == Changelog ==
+
+= 1.3.0 =
+* More Page Settings options added
+* More Post Settings options added
+* Documentation, support links added
+* Few bugfix and improvements
 
 = 1.2.3 =
 * Google Analytics option added to Customizer
