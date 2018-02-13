@@ -33,10 +33,10 @@ function flexia_core_register_page_metaboxs() {
 		'type'             => 'select',
 		'show_option_none' => false,
 		'options'          => array(
-			'flexia_page_header_default' 	=> esc_html__( 'Default Header ( From Customizer )', 'flexia_core' ),
-            'flexia_page_header_large'      => esc_html__( 'Large Header', 'flexia_core' ),
-            'flexia_page_header_mini'       => esc_html__( 'Mini Header', 'flexia_core' ),
-			'flexia_page_header_none'       => esc_html__( 'No Header', 'flexia_core' ),
+			'flexia_core_page_header_default' 	  => esc_html__( 'Default Header ( From Customizer )', 'flexia_core' ),
+            'flexia_core_page_header_large'       => esc_html__( 'Large Header', 'flexia_core' ),
+            'flexia_core_page_header_mini'        => esc_html__( 'Mini Header', 'flexia_core' ),
+			'flexia_core_page_header_none'        => esc_html__( 'No Header', 'flexia_core' ),
 		),
 	) );
 
