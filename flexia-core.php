@@ -69,6 +69,33 @@ function run_flexia_core() {
 }
 run_flexia_core();
 
+
+/**
+ * Add separate flexia admin page through plugin
+ * 
+ * @since 1.0.4
+ */
+add_action('flexia_admin_menu', function($class) {
+	add_menu_page(
+		'Flexia',
+		'Flexia',
+		'manage_options',
+		'flexia',
+		array($class, 'flexia_dashboard_page'),
+		get_template_directory_uri() . '/admin/img/flexia-logo-white.svg',
+		199
+	);
+
+	add_submenu_page(
+		'flexia',
+		'Rec. Plugins',
+		'Rec. Plugins',
+		'manage_options',
+		'flexia-recommended-plugins',
+		array($class, 'flexia_rec_plugins_page')
+	);
+});
+
 /**
  * Optional usage tracker
  */
