@@ -36,6 +36,7 @@ function flexia_core_register_post_metaboxs() {
 			'default' 	=> esc_html__( 'Default (from Customizer)', 'flexia_core' ),
 			'large'   	=> esc_html__( 'Large Header (Featured Image Background)', 'flexia_core' ),
 			'simple'    => esc_html__( 'Simple Header', 'flexia_core' ),
+			'simple_no_container'    => esc_html__( 'Simple Header No Container', 'flexia_core' ),
 			'none'      => esc_html__( 'No Header', 'flexia_core' ),
 		),
 	) );

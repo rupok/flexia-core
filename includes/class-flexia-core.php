@@ -127,12 +127,6 @@ class Flexia_Core {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/shortcodes/class-flexia-core-shortcodes.php';
 
 		/**
-		 * Requiring all partial pages for admin settings
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/flexia-core-admin-pages.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-flexia-core-plugin-installer.php';
-
-		/**
 		 * Requiring CMB2
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cmb2/init.php';
@@ -179,15 +173,10 @@ class Flexia_Core {
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
-
 		$plugin_admin = new Flexia_Core_Admin( $this->get_plugin_name(), $this->get_version() );
-		$plugin_admin_pages = new Flexia_Core_Admin_Pages( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		$this->loader->add_action( 'admin_menu', $plugin_admin_pages, 'create_flexia_core_admin_page' );
-		$this->loader->add_action( 'admin_menu', $plugin_admin_pages, 'create_flexia_core_rec_plugins_page', 20 );
-
 	}
 
 	/**
