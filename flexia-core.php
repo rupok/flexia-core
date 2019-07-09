@@ -24,6 +24,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 define( 'FLEXIA_CORE_VERSION', '1.3.1' );
+define( 'FLEXIA_CORE_BASENAME', plugin_basename( __FILE__ ) );
 
 /**
  * The code that runs during plugin activation.
@@ -51,6 +52,7 @@ register_deactivation_hook( __FILE__, 'deactivate_flexia_core' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-flexia-core.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-wpdev-notices.php';
 
 /**
  * Begins execution of the plugin.
@@ -77,9 +79,9 @@ if( ! class_exists( 'Flexia_Core_Plugin_Usage_Tracker') ) {
 }
 if( ! function_exists( 'flexia_core_start_plugin_tracking' ) ) {
 	function flexia_core_start_plugin_tracking() {
-		$wisdom = new Flexia_Core_Plugin_Usage_Tracker(
+		new Flexia_Core_Plugin_Usage_Tracker(
 			__FILE__,
-			'https://wpdeveloper.net',
+			'http://app.wpdeveloper.net',
 			array(),
 			true,
 			true,
