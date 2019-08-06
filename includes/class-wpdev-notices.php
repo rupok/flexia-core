@@ -919,13 +919,13 @@ $notice->links = [
  */
 $notice->classes( 'upsale', 'notice is-dismissible' );
 $notice->message( 'upsale', '<p>'. __( 'Enjoying <strong>Flexia</strong>? Get awesome features with Flexia Pro.', $notice->text_domain ) .'</p>' );
-$notice->thumbnail( 'upsale', plugins_url( 'admin/assets/images/wpsp-logo.svg', FLEXIA_CORE_BASENAME ) );
+$notice->thumbnail( 'upsale', plugins_url( 'admin/img/flexia-logo.svg', FLEXIA_CORE_BASENAME ) );
 
 /**
  * This is review message and thumbnail.
  */
 $notice->message( 'review', '<p>'. __( 'We hope you\'re enjoying Flexia! Could you please do us a BIG favor and give it a 5-star rating on WordPress to help us spread the word and boost our motivation?', $notice->text_domain ) .'</p>' );
-$notice->thumbnail( 'review', plugins_url( 'admin/assets/images/wpsp-icon.svg', FLEXIA_CORE_BASENAME ) );
+$notice->thumbnail( 'review', plugins_url( 'admin/img/flexia-logo.svg', FLEXIA_CORE_BASENAME ) );
 
 /**
  * Current Notice End Time.
