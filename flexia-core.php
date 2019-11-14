@@ -9,7 +9,7 @@
  * Plugin Name:       Flexia Core
  * Plugin URI:        https://flexia.pro
  * Description:       Core plugin for Flexia theme. Controls all the plugin territory functionalities.
- * Version:           1.3.1
+ * Version:           1.4.0
  * Author:            Codetic
  * Author URI:        https://www.codetic.net
  * License:           GPL-2.0+
@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'FLEXIA_CORE_VERSION', '1.3.1' );
+define( 'FLEXIA_CORE_VERSION', '1.4.0' );
 define( 'FLEXIA_CORE_BASENAME', plugin_basename( __FILE__ ) );
 
 /**
@@ -86,15 +86,6 @@ add_action('flexia_admin_menu', function($class) {
 		array($class, 'flexia_dashboard_page'),
 		get_template_directory_uri() . '/admin/img/flexia-logo-white.svg',
 		199
-	);
-
-	add_submenu_page(
-		'flexia',
-		'Rec. Plugins',
-		'Rec. Plugins',
-		'manage_options',
-		'flexia-recommended-plugins',
-		array($class, 'flexia_rec_plugins_page')
 	);
 });
 
