@@ -1,10 +1,10 @@
 === Flexia Core ===
 
-Contributors: re_enter_rupok, codetic
+Contributors: re_enter_rupok, codetic, wpdevteam
 Tags: flexia, shortcodes, bootstrap-4, metabox, customizer, widgets, Google Analytics, Facebook Pixel
 Requires at least: 4.0
-Tested up to: 4.9.4
-Stable tag: 1.3.1
+Tested up to: 5.3
+Stable tag: 1.4.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -124,6 +124,11 @@ It's a specialized plugin for Flexia theme, you need to install Flexia to get mo
 
 
 == Changelog ==
+
+= 1.4.0 =
+* Compatiblity with Flexia v1.1.0
+* Compatiblity with WordPress 5.3
+* Few minor bugfix and improvements
 
 = 1.3.1 =
 * Compatiblity with Flexia v1.0.0
