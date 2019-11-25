@@ -9,7 +9,7 @@
  * Plugin Name:       Flexia Core
  * Plugin URI:        https://flexia.pro
  * Description:       Core plugin for Flexia theme. Controls all the plugin territory functionalities.
- * Version:           1.4.0
+ * Version:           1.4.1
  * Author:            Codetic
  * Author URI:        https://www.codetic.net
  * License:           GPL-2.0+
@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'FLEXIA_CORE_VERSION', '1.4.0' );
+define( 'FLEXIA_CORE_VERSION', '1.4.1' );
 define( 'FLEXIA_CORE_BASENAME', plugin_basename( __FILE__ ) );
 
 /**
