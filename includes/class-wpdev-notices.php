@@ -840,8 +840,6 @@ class WPDeveloper_FlexiaCore_Notice {
 
                 $('.wpdeveloper-upsale-notice').on('click', 'button.notice-dismiss', function (e) {
                     e.preventDefault();
-                    console.log( e );
-                    return;
                     $.ajax({
                         url: '<?php echo admin_url( 'admin-ajax.php' ); ?>',
                         type: 'post',
