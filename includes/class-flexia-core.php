@@ -117,26 +117,9 @@ class Flexia_Core {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-flexia-core-admin.php';
 
 		/**
-		 * Flexia Core Customizer
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/flexia-core-customizer.php';
-
-		/**
 		 * Flexia Core Shortcodes
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/shortcodes/class-flexia-core-shortcodes.php';
-
-		/**
-		 * Requiring CMB2
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cmb2/init.php';
-		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cmb2/example-functions.php';
-
-		/**
-		 * Requiring flexia metaboxes
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/metabox/class-flexia-core-metaboxes-installer.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/metabox/class-flexia-core-post-metaboxes-installer.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing

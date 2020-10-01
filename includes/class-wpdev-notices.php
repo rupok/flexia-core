@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit;
 } // Exit if accessed directly.
 
-class WPDeveloper_FlexiaCore_Notice {
+class WPDeveloper_FlexiaCore_Notice { 
     /**
      * Admin Notice Key
      *
