@@ -41,7 +41,4 @@ class Flexia_Core_i18n {
 		);
 
 	}
-
-
-
 }

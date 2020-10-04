@@ -952,5 +952,4 @@ $notice->options_args = array(
    ]
 );
 
-
 $notice->init();
