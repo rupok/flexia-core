@@ -3,8 +3,8 @@
 Contributors: re_enter_rupok, codetic, wpdevteam
 Tags: flexia, shortcodes, bootstrap-4, metabox, customizer, widgets, Google Analytics, Facebook Pixel
 Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 1.4.1
+Tested up to: 5.5
+Stable tag: 1.4.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -124,6 +124,10 @@ It's a specialized plugin for Flexia theme, you need to install Flexia to get mo
 
 
 == Changelog ==
+
+= 1.4.2 =
+* Removed: Customizer controls moved to Theme
+* Removed: Metabox controls moved to Theme
 
 = 1.4.1 =
 * Admin notice removed
